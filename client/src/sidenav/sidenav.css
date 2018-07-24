@@ -1,0 +1,38 @@
+.sub-container1 {
+    width: 20%;
+    background-color: #C4C4C4;
+    height: 100vh;
+}
+
+.sub-container1 a {
+    padding: 23px;
+    height: 40px;
+    display: block;
+
+
+}
+
+ .flights i
+ {
+    padding-left: 10px;
+     font-size: 25px; 
+     margin-top: 20px;
+
+} 
+
+.add-flight i{
+    padding-left: 10px;
+    font-size: 25px; 
+
+}
+
+.add-flight a{
+    margin-top: -20px;
+
+}
+
+.flights,
+.add-flight {
+    display: flex;
+    flex-direction: row;
+}
