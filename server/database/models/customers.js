@@ -7,10 +7,14 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.STRING(20)
     },
     email: {
-      type: DataTypes.STRING(30)
+      type: DataTypes.STRING(30),
+      allowNull: false,
+      unique: true
     },
     phone: {
-      type: DataTypes.STRING(20)
+      type: DataTypes.STRING(20),
+      allowNull: false,
+      unique: true
     },
     notify_me: {
       type: DataTypes.STRING(20)

@@ -7,7 +7,8 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
     flight_id: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      unique: true
     },
     origin: {
       type: DataTypes.STRING
