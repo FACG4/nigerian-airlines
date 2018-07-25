@@ -2,10 +2,8 @@ import React, {
   Component
 } from 'react';
 
-
-
-import Login from './login/Login.jsx';
-import Flight from './flights/Flight.jsx';
+import Login from './pages/login/Login.jsx';
+import Flight from './pages/flights/Flight.jsx';
 import './App.css';
 
 class App extends Component {
@@ -17,7 +15,7 @@ class App extends Component {
   }
 
   render() {
-           return (<Flight />);
+           return (<Login/>);
          
   }
 }

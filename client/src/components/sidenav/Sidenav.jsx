@@ -1,7 +1,7 @@
 import React, {
     Component
   } from 'react';
-  import '../App.css';
+  import '../../App.css';
   import './sidenav.css'
     
   class Sidenav extends Component {

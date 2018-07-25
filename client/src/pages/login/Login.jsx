@@ -2,10 +2,9 @@ import React, {
   Component
 } from 'react';
 import './login.css';
-import '../App.css';
-import '../input/Input.jsx'
-import Input from '../input/Input.jsx';
-import Button from '../button/Button.jsx';
+import '../../App.css';
+import Input from '../../components/input/Input.jsx';
+import Button from '../../components/button/Button.jsx';
 
 
 
@@ -27,22 +26,18 @@ class Login extends Component {
         <div className="inputs-group">
 
 
-        <div className="user">
-        <div className="usericon">
-            <span className="fas fa-user-tie"></span>
-        </div>
-          <div className="userinput">
+        {/* <div className="user">
+        <div className="usericon"> */}
+            <label class="start_date">
             <Input className="uname" placeholder='Username' />
-          </div>
-
-        </div>
+            </label>
+          {/* </div>
+        </div> */}
 
         <Input className='password' placeholder='Password'  />
         </div>
         <Button  textvalue="Login"/>
 
-
-    
 </div>
   
     );

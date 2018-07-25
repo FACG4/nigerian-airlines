@@ -1,13 +1,13 @@
 import React, {
     Component
   } from 'react';
-  import '../App.css';
+  import '../../App.css';
   import './flight.css';
 
 
-  import Header from '../header/Header.jsx';
-import Sidenav from '../sidenav/Sidenav.jsx';
-import Table from '../table/Table.jsx'
+  import Header from '../../components/header/Header.jsx';
+import Sidenav from '../../components/sidenav/Sidenav.jsx';
+import Table from '../../components/table/Table.jsx'
 
 
   class Flight extends Component {
