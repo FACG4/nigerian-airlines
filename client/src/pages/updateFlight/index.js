@@ -17,7 +17,7 @@ class UpdateFlight extends Component {
             <div className="sub-container-sidenav-form">
               <Sidenav thirdTap={true}/>
               <div className="sub-container-form">
-                <DetailsCard flightduration='00 hours'/>
+                <DetailsCard flightduration='00 hours' destination='destination' origin='origin' />
                 <Input labelText='Departure time' iconclass='fa fa-user' placeholder='00:00:00 am' />
                 <Input labelText='Boarding time' iconclass='fa fa-user' placeholder='00:00:00 am' />
                 <Input labelText='Gate no.' iconclass='fa fa-user' placeholder='ex:1234' />

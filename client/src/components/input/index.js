@@ -8,7 +8,6 @@ class Input extends Component {
     return (
       <div className='container-input'>
         <label className='label-style'>{labelText}</label>
-        {/* <i class={iconclass}></i> */}
         <input className='input-style' placeholder={placeholder}/>
       </div>
     );
