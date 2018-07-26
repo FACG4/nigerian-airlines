@@ -1,0 +1,25 @@
+.inline-div {
+  float: right;
+}
+
+.container-card {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #91ADF630;
+  width: 225px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.time-image {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.duration-label {
+  font-family: 'Volkhov';
+  font-size: 12px;
+  margin-right: 10px;
+}

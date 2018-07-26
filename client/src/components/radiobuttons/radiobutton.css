@@ -1,0 +1,14 @@
+.radiobuttons-style {
+  display: inline-block;
+  float: right;
+}
+
+.label-style {
+  font-size: 16px;
+  font-family: 'Volkhov';
+  margin-right: 20px;
+}
+
+.radioclass {
+  margin-right: 5px;
+}

@@ -1,38 +1,27 @@
-.sub-container1 {
-    width: 20%;
-    background-color: #C4C4C4;
-    height: 100vh;
+.sidenav-container {
+  width: 20%;
+  background-color: #C4C4C425;
+  height: 100vh;
+  padding-top: 10px;
+  display: inline;
 }
 
-.sub-container1 a {
-    padding: 23px;
-    height: 40px;
-    display: block;
-
-
+.flights img, .add-flight img, .update-flight img {
+  padding-left: 3px;
+  font-size: 25px;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
- .flights i
- {
-    padding-left: 10px;
-     font-size: 25px; 
-     margin-top: 20px;
-
-} 
-
-.add-flight i{
-    padding-left: 10px;
-    font-size: 25px; 
-
+.flights, .add-flight, .update-flight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
 }
 
-.add-flight a{
-    margin-top: -20px;
-
-}
-
-.flights,
-.add-flight {
-    display: flex;
-    flex-direction: row;
+.flights:hover, .add-flight:hover, .update-flight:hover {
+  background-color: #d6d0d0;
+  cursor: pointer;
 }

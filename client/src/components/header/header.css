@@ -1,32 +1,21 @@
-body {
-    margin: 0;
+.header-container {
+  background-color: #8CA2D9;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.headerContainer {
-    background-color: #8CA2D9;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
+.plane-image {
+  float: left;
+  width: 70px;
+  height: 70px;
 }
 
-.headerContainer a {
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-.headerContainer .planeImage {
-    float: left;
-    width: 70px;
-    height: 70px;
-}
-
-.headerContainer .username {
-    float: right;
-    margin-top: -10px;
-    margin-right: 30px;
+.username {
+  float: right;
+  color: #f2f2f2;
+  font-family: 'Volkhov';
 }
