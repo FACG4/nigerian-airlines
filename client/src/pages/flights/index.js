@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../App.css';
 import './flight.css';
 import Header from '../../components/header';
 import Sidenav from '../../components/sidenav';

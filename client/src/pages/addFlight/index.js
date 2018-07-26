@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './addflight.css';
-import '../../App.css';
 import Durationcard from '../../components/durationcard';
 import Select from '../../components/select';
 import Input from '../../components/input';
@@ -18,8 +17,8 @@ class UpdateFlight extends Component {
             <div className="sub-container-sidenav-form">
               <Sidenav />
               <div className="sub-container-form">
-                <Select labelText='Origin' firstItem='from' />
-                <Select labelText='Destination' firstItem='to' />
+                <Select labelText='Origin' firstItem='from' cities={['city1','city2']}/>
+                <Select labelText='Destination' firstItem='to' cities={['city1','city2']} />
                 <Input labelText='Flight date' placeholder='flight date' />
                 <Input labelText='Aircraft type' placeholder='aircraft type' />
                 <div className='width-div'>

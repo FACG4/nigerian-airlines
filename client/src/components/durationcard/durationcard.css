@@ -1,5 +1,6 @@
 .inline-div {
   float: right;
+  font-family: 'Volkhov';
 }
 
 .container-card {
@@ -7,7 +8,7 @@
   align-items: center;
   border-radius: 10px;
   background-color: #91ADF630;
-  width: 225px;
+  width: 280px;
   padding: 10px;
   margin-bottom: 40px;
 }
@@ -19,7 +20,6 @@
 }
 
 .duration-label {
-  font-family: 'Volkhov';
   font-size: 12px;
   margin-right: 10px;
 }

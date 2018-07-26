@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../App.css';
 import './durationcard.css'
 
 class Card extends Component {
