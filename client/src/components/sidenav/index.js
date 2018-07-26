@@ -10,18 +10,18 @@ class Sidenav extends Component {
 
         <div className="flights">
           <img src={require('./tables.png')} alt='tables' />
-          <a>Flights</a>
+          <a href="#">Flights</a>
         </div>
 
         <div className="add-flight">
           <img src={require('./addtable.png')} alt='atables' />
-          <a>Add Flights</a>
+          <a href="#">Add Flights</a>
         </div>
 
       { thirdTap &&
         (<div className="update-flight">
           <img src={require('./edittable.png')} alt='etables' />
-          <a>Update flight status</a>
+          <a href="#">Update flight status</a>
         </div>)
       }
       </div>

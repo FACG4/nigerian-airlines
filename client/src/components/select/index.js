@@ -10,10 +10,10 @@ class Select extends Component {
         <label className='label-style'>{labelText}</label>
         <select className='select-style'>
           <option>{firstItem}</option>
-          <option>balsam</option>
-          <option>balsam</option>
-          <option>balsam</option>
-          <option>balsam</option>
+          <option>city1</option>
+          <option>city2</option>
+          <option>city3</option>
+          <option>city4</option>
         </select>
 
       </div>
