@@ -6,7 +6,7 @@ export default (sequelize, DataTypes) => {
     airport: {
       type: DataTypes.STRING
     },
-    flight_id: {
+    flight_no: {
       type: DataTypes.STRING,
       unique: true
     },
@@ -19,7 +19,7 @@ export default (sequelize, DataTypes) => {
     departure_time: {
       type: DataTypes.DATE
     },
-    flight_time: {
+    arrival_time: {
       type: DataTypes.DATE
     },
     gate: {
