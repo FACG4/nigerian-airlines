@@ -11,26 +11,26 @@ class Navbar extends Component{
     constructor() {
         super();
         this.state={
-            activeTab: 'flights'
+        activeTab: 'flights'
         }
 
         this.handleTabChange = this.handleTabChange.bind(this);
     }
 
     handleTabChange(activeTab) {
-        this.setState({
-            ...this.state,
-            activeTab
+    this.setState({
+     ...this.state,
+     activeTab
         })
     }
 
     render(){
         return(
-      <div>
+       <div>
         <div className = "nav">
-            <div className ="user">
-            <a className="username" href={'#'} >username</a>
-                <img src={image} />
+        <div className ="user">
+         <a className="username" href={'#'} >username</a>
+         <img src={image} />
                 
             </div>
             <div>
@@ -43,7 +43,7 @@ class Navbar extends Component{
                 onClick={() => this.handleTabChange('flights')}
                 className={this.state.activeTab === 'flights' ? 'active' : ''}
             >
-            <br></br>
+            
            
             <li className="fli">
                 <img className ="add"  src= {photo} />
