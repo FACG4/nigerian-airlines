@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './durationcard.css'
+import './durationcard.css';
 
 class Card extends Component {
   render() {
@@ -8,7 +8,7 @@ class Card extends Component {
     return (
       <div className='inline-div'>
         <div className='container-card'>
-          <img src={require('./time.png')} className="time-image" alt='time'/>
+          <img src={require('./time.png')} className='time-image' alt='time'/>
           <label className='duration-label'>Flight duration &nbsp; &nbsp;</label>
           <label className='duration-label'>{flightduration}</label>
         </div>
