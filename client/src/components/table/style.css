@@ -1,0 +1,44 @@
+
+@import url('https://fonts.googleapis.com/css?family=Volkhov');
+body{
+    text-align: center;
+}
+
+
+#table th{
+    
+    background-color: #C4C4C4;
+    color: #282B2A;
+    width: 25%;
+    font-family: 'Volkhov';
+    text-align:internal-center;
+    font-size: 20px;
+}
+
+    #table td{
+   padding: 19px;
+   margin: 0%;
+   background-color: #c0cdee94 ;
+   width: 25%;
+   font-family: 'Volkhov';
+   font-size: 20px;
+   border: 0 solid#c0cdee94;
+
+}
+    .rr{
+
+    align-content: center;
+    margin-top: -1064px;
+    margin-left: 120px;
+}
+    #table{
+    align-content: center;
+    padding-top:auto;
+    padding-right: auto;
+    padding-right: auto;
+    padding-bottom: auto;
+    margin-left: 550px;
+    margin-top: 200px;
+
+
+}

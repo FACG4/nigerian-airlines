@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import Login from './pages/login';
-// import Flight from './pages/flights';
 import AddFlight from './pages/addFlight';
 import UpdateFlight from './pages/updateFlight';
 import './App.css';
+import Navbar from './components/navbar/index';
+import Flight from './components/table/index';
 
 class App extends Component {
   render() {
     return (
-      <Login />
+      <div>
+      {/* { <Login />} */}
+     < Navbar />
+     <Flight />
+      </div>
     );
   }
 }
