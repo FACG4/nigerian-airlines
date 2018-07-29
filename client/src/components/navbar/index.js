@@ -4,9 +4,9 @@ import './style.css'
 
 class Navbar extends Component{
     constructor() {
-        super();
-        this.state={
-            activeTab: 'flights'
+         super();
+         this.state={
+         activeTab: 'flights'
         }
 
         this.handleTabChange = this.handleTabChange.bind(this);
@@ -14,24 +14,26 @@ class Navbar extends Component{
 
     handleTabChange(activeTab) {
         this.setState({
-            ...this.state,
-            activeTab
+         ...this.state,
+        activeTab
         })
-    }
+    } 
+
 
     render(){
         return(
+      <div>    
+         <div className = "nav">
+         <div className ="user">
+         <a className="username" href={'#'} >username</a>
+         <img src={'/images/username.png'} />
+                          
+      </div>
+
       <div>
-        <div className = "nav">
-            <div className ="user">
-            <a className="username" href={'#'} >username</a>
-                <img src={'/images/username.png'} />
-                
-            </div>
-            <div>
-            <img className ="plane" src={'/images/plan.png'} />
-            </div>
+        <img className ="plane" src={'/images/plan.png'} />
         </div>
+      </div>
         <div className="sideDiv">
         <ul>
             <li

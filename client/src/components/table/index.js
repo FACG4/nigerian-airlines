@@ -46,35 +46,35 @@ class Flight extends React.Component{
       <div className ="rr">
           <table id ="table"   onChange={(event)=> this.handleChange(event)}>
       
-        <tr>
-          <th>flight no.</th>
-          <th> flight data</th> 
-          <th> flight time</th>
-          <th> flight duration</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
+              <tr>
+              <th>flight no.</th>
+              <th> flight data</th> 
+              <th> flight time</th>
+              <th> flight duration</th>
+              </tr>
+              <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
 
-       </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+              </tr>
+              <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
 
-         </tr>
-         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+              </tr>
+              <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
 
-         </tr>
+              </tr>
 
-      </table>
+              </table>
       </div> 
       
       )}
