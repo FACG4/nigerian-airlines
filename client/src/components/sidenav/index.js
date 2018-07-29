@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './sidenav.css'
+import './sidenav.css';
 
 class Sidenav extends Component {
   render() {
