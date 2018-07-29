@@ -1,0 +1,33 @@
+.sidenav-container {
+  width: 20%;
+  background-color: #C4C4C425;
+  height: 100vh;
+  padding-top: 10px;
+  display: inline;
+  font-family: 'Volkhov';
+  font-size: 15px;
+}
+
+.sidenav-container li img {
+  padding-left: 3px;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.sidenav-container li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+}
+
+.sidenav-container li a {
+  text-decoration: none;
+  color: black;
+}
+
+.sidenav-container li:hover {
+  background-color: #d6d0d0;
+  cursor: pointer;
+}
