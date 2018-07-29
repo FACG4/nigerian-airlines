@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link ,Route  } from 'react-router-dom'
 import './sidenav.css'
+
 
 class Sidenav extends Component {
   render() {
@@ -8,20 +10,27 @@ class Sidenav extends Component {
       <ul className="sidenav-container">
 
         <li>
-          <img src={require('./tables.png')} alt='tables' />
-          <a href="#">Flights</a>
+        <Link to="/flights">
+            <img src={require('./tables.png')} alt='tables' />
+            <a href="#">Flights</a>
+          </Link>
         </li>
 
         <li>
-          <img src={require('./addtable.png')} alt='atables' />
-          <a href="#">Add Flights</a>
+         <Link to="/addflight">
+            <img src={require('./addtable.png')} alt='atables' />
+            <a href="#">Add Flights</a>
+         </Link>
         </li>
 
       { thirdTap &&
         (<li>
-          <img src={require('./edittable.png')} alt='etables' />
-          <a href="#">Update flight status</a>
-        </li>)
+           <Link to="/updateflight">
+            <img src={require('./edittable.png')} alt='etables' />
+            <a href="#">Update flight status</a>
+           </Link>
+        </li>
+        )
       }
       </ul>
     );
