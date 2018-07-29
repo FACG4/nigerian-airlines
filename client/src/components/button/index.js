@@ -5,7 +5,7 @@ class Button extends Component {
   render() {
     const { textvalue } = this.props;
     return (
-      <button className='btn-style'>{textvalue}</button>
+      <button className='btn-style'>{ textvalue}</button>
     );
   }
 }

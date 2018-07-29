@@ -9,15 +9,15 @@ class Card extends Component {
         <div className='container-card-details'>
           <label className='flightno-style'>Flight no.</label>
           <div className='labels-container'>
-            <label className='duration-label'>From</label>
+            <label className='details-label'>From</label>
             <label className='float-style'>{origin}</label>
           </div>
           <div className='labels-container'>
-            <label className='duration-label'>To</label>
+            <label className='details-label'>To</label>
             <label className='float-style'>{destination}</label>
           </div>
           <div className='labels-container'>
-            <label className='duration-label'>Flight duration</label>
+            <label className='details-label'>Flight duration</label>
             <label className='float-style'>{flightduration}</label>
           </div>
         </div>
