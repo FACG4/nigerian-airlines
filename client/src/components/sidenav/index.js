@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
-import '../../App.css';
+
 import './sidenav.css'
 
 class Sidenav extends Component {
   render() {
     const { thirdTap } = this.props;
     return (
-      <div className="sidenav-container">
+      <ul className="sidenav-container">
 
-        <div className="flights">
+        <li>
           <img src={require('./tables.png')} alt='tables' />
-          <a>Flights</a>
-        </div>
+          <a href="#">Flights</a>
+        </li>
 
-        <div className="add-flight">
+        <li>
           <img src={require('./addtable.png')} alt='atables' />
-          <a>Add Flights</a>
-        </div>
+          <a href="#">Add Flights</a>
+        </li>
 
       { thirdTap &&
-        (<div className="update-flight">
+        (<li>
           <img src={require('./edittable.png')} alt='etables' />
-          <a>Update flight status</a>
-        </div>)
+          <a href="#">Update flight status</a>
+        </li>)
       }
-      </div>
+      </ul>
     );
   }
 }

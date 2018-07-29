@@ -6,6 +6,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  font-family: 'Volkhov';
 }
 
 .plane-image {
@@ -17,5 +18,4 @@
 .username {
   float: right;
   color: #f2f2f2;
-  font-family: 'Volkhov';
 }

@@ -2,6 +2,7 @@
   width: 500px;
   height: 50px;
   margin-bottom: 40px;
+  font-family: 'Volkhov';
 }
 
 .select-style {
@@ -12,7 +13,6 @@
   width: 300px;
   height: 50px;
   padding-left: 10px;
-  font-family: 'Volkhov';
   float: right;
 }
 
@@ -24,5 +24,4 @@
   font-size: 18px;
   margin-bottom: 20px;
   height: 50px;
-  font-family: 'Volkhov';
 }
