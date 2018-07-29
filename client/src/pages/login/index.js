@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link ,Route  } from 'react-router-dom'
-import { Redirect } from 'react-router'
+import { Link ,Route, Redirect, withRouter } from 'react-router-dom'
 
 import { Input, Button } from '../../components'
 import './login.css';
@@ -21,7 +20,7 @@ class Login extends Component {
     e.preventDefault()
     const { history } = this.props;
     console.log('props',history);
-    //  this.props.history.push('/addflight')
+     this.props.history.push('/addflight')
   }
 
   handleTextInputChange(value) {
@@ -37,7 +36,7 @@ class Login extends Component {
                <Input iconclass='fa fa-user' placeholder='username'  onTextInputChange={this.handleTextInputChange}/>
                <Input iconclass='fas fa-unlock' placeholder='password' onTextInputChange={this.handleTextInputChange} />
            </div>
-          <Button textvalue="Login" />
+          <Button onClick={this.handleLogin} className="btn-style">Login</Button>
           </form>
           {/* <Redirect to={'/addflight'}/> */}
 
@@ -46,4 +45,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

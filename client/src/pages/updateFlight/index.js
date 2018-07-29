@@ -4,6 +4,10 @@ import { DetailsCard, Input, Button, Header, SideNav, RadioButton} from '../../c
 import '../addFlight/addflight.css';
 
 class UpdateFlight extends Component {
+  handleFlightUpdate = (e) => {
+    e.preventDefault();
+    console.log('form submit is going to be handledd here');
+  }
   render() {
     return (
         <div className="addflight-container">
@@ -11,7 +15,7 @@ class UpdateFlight extends Component {
           <div className="container-content">
             <div className="sub-container-sidenav-form">
               <SideNav thirdTap={true}/>
-              <div className="sub-container-form">
+              <form className="sub-container-form" onSubmit={this.handleFlightUpdate}>
                 <DetailsCard flightduration='00 hours' destination='destination' origin='origin' />
                 <Input labelText='Departure time' iconclass='fa fa-user' placeholder='00:00:00 am' />
                 <Input labelText='Boarding time' iconclass='fa fa-user' placeholder='00:00:00 am' />
@@ -22,9 +26,9 @@ class UpdateFlight extends Component {
                   <RadioButton />
                 </div>
                 <div className='center-btn'>
-                  <Button textvalue='Update'/>
+                  <Button className="btn-style">Update</Button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

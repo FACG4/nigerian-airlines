@@ -4,6 +4,10 @@ import { DurationCard, Select, Input, TimeButton, Button, Header, SideNav} from 
 import './addflight.css';
 
 class UpdateFlight extends Component {
+  addFlight = (e) => {
+    e.preventDefault();
+    console.log("hi")
+  }
   render() {
     return (
         <div className="addflight-container">
@@ -21,7 +25,12 @@ class UpdateFlight extends Component {
                   <DurationCard flightduration='00 hours'/>
                 </div>
                 <div className='center-btn'>
-                  <Button textvalue='Add'/>
+                  <Button
+                    className="btn-style"
+                    onClick={this.addFlight}
+                  >
+                    Add
+                  </Button>
                 </div>
               </div>
             </div>
