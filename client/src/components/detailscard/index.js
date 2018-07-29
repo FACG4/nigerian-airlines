@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import './detailscard.css'
+import './detailscard.css';
 
 class Card extends Component {
   render() {
-    const { flightduration, destination , origin} = this.props;
+    const { flightduration, destination , origin } = this.props;
     return (
       <div className='center-div'>
         <div className='container-card-details'>
