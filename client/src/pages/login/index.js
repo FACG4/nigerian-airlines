@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import './login.css';
-import Input from '../../components/input';
-import Button from '../../components/button';
 import { Link ,Route  } from 'react-router-dom'
 import { Redirect } from 'react-router'
 
+import { Input, Button } from '../../components'
+import './login.css';
 
 class Login extends Component {
   constructor(props){

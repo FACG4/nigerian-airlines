@@ -17,7 +17,7 @@ export default (sequelize, DataTypes) => {
       unique: true
     },
     notify_me: {
-      type: DataTypes.STRING(20)
+      type: DataTypes.BOOLEAN
     }
   });
   return Customers;
