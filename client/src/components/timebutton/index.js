@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../App.css';
 import './timebutton.css'
 
 class Timebutton extends Component {
@@ -10,5 +9,4 @@ class Timebutton extends Component {
     );
   }
 }
-
 export default Timebutton;

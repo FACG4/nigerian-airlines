@@ -8,21 +8,18 @@ class Sidenav extends Component {
     const { thirdTap } = this.props;
     return (
       <ul className="sidenav-container">
-
         <li>
         <Link to="/flights">
             <img src={require('./tables.png')} alt='tables' />
             <a href="#">Flights</a>
           </Link>
         </li>
-
         <li>
          <Link to="/addflight">
             <img src={require('./addtable.png')} alt='atables' />
             <a href="#">Add Flights</a>
          </Link>
         </li>
-
       { thirdTap &&
         (<li>
            <Link to="/updateflight">

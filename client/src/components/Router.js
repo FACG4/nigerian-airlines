@@ -13,9 +13,7 @@ const Router = () =>(
          <Route path="/updateflight" component={UpdateFlight} />
         </Switch>
     </BrowserRouter>
-
 )
 export default Router;
-
 
 
