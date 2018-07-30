@@ -1,3 +1,4 @@
+
 export default (sequelize, DataTypes) => {
   const Flights = sequelize.define('flights', {
     airline: {
@@ -6,7 +7,7 @@ export default (sequelize, DataTypes) => {
     airport: {
       type: DataTypes.STRING
     },
-    flight_id: {
+    flight_no: {
       type: DataTypes.STRING,
       unique: true
     },
@@ -16,10 +17,13 @@ export default (sequelize, DataTypes) => {
     destination: {
       type: DataTypes.STRING
     },
+    flight_date :{
+      type: DataTypes.DATE
+    },
     departure_time: {
       type: DataTypes.DATE
     },
-    flight_time: {
+    arrival_time: {
       type: DataTypes.DATE
     },
     gate: {
