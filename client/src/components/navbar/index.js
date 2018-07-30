@@ -1,5 +1,6 @@
-import React ,{Component}from 'react';
+import React, { Component }from 'react';
 import ReactDOM from 'react-dom';
+
 import './style.css'    
 
 class Navbar extends Component{
@@ -27,7 +28,6 @@ class Navbar extends Component{
          <div className ="user">
          <a className="username" href={'#'} >username</a>
          <img src={'/images/username.png'} />
-                          
       </div>
 
       <div>

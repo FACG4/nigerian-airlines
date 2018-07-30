@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './style.css'
-class Flight extends React.Component{
+class Table extends React.Component{
   constructor(props){
     super(props);
     this.state={  
@@ -11,7 +11,6 @@ class Flight extends React.Component{
       flightTime:'',
       flightDuration:'',
       flightsArray:[]
-      
     }
     this.handleChange=this.handleChange.bind(this);
     this.flightDate=this.flightDate.bind(this);
@@ -45,36 +44,33 @@ class Flight extends React.Component{
 
       <div className ="rr">
           <table id ="table"   onChange={(event)=> this.handleChange(event)}>
-      
+            <tbody>
               <tr>
-              <th>flight no.</th>
-              <th> flight data</th> 
-              <th> flight time</th>
-              <th> flight duration</th>
+                <th>flight no.</th>
+                <th> flight data</th> 
+                <th> flight time</th>
+                <th> flight duration</th>
               </tr>
               <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
               </tr>
               <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
-
-              </table>
+          </tbody>
+        </table>
       </div> 
       
       )}
@@ -82,4 +78,4 @@ class Flight extends React.Component{
 }
 
 
-export default Flight;
+export default Table;

@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
-import Login from './pages/login';
-import AddFlight from './pages/addFlight';
-import UpdateFlight from './pages/updateFlight';
 
-import { UpdateFlight } from './pages';
+import { UpdateFlight, AddFlight, Login, Flights } from './pages';
+import { Table } from './components';
+
+
 import './App.css';
-import Navbar from './components/navbar/index';
-import Flight from './components/table/index';
 
 class App extends Component {
   render() {
     return (
       <div>
-      {/* { <Login />} */}
-     < Navbar />
-     <Flight />
+        <Flights />
       </div>
     );
   }
