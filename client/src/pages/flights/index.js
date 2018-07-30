@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Header, SideNav} from '../../components'
+import { Header, SideNav, Table } from '../../components'
 
 class Flight extends Component {
   render() {
@@ -11,7 +11,8 @@ class Flight extends Component {
             <div className="sub-containers">
               <SideNav />
               <div className="sub-container2">
-              </div>
+                 <Table/>
+             </div>
             </div>
           </div>
         </div>

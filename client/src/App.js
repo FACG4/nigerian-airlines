@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 
-import { UpdateFlight } from './pages';
+import { UpdateFlight, AddFlight, Login, Flights } from './pages';
+import { Table } from './components';
+
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <Login />
+      <div>
+        <Flights />
+      </div>
     );
   }
 }

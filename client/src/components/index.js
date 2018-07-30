@@ -7,6 +7,8 @@ import RadioButton from './radiobuttons';
 import Select from './select';
 import SideNav from './sidenav';
 import TimeButton from './timebutton';
+import Navbar from './navbar';
+import Table from './table';
 
 export {
   Button,
@@ -17,5 +19,7 @@ export {
   RadioButton,
   Select,
   SideNav,
-  TimeButton
+  TimeButton,
+  Table ,
+  Navbar 
 }
