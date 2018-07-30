@@ -2,12 +2,12 @@
   width: 500px;
   height: 50px;
   margin-bottom: 40px;
-  font-family: 'Volkhov';
+  font-family: "Volkhov";
 }
 
 .input-style {
-  background-color: #91ADF6;
-  border-color: #91ADF6;
+  background-color: #91adf6;
+  border-color: #91adf6;
   padding: 5px;
   border-radius: 5px;
   width: 300px;
@@ -17,7 +17,7 @@
 }
 
 .input-style::placeholder {
-  color: #1F2121;
+  color: #1f2121;
 }
 
 .label-style {

@@ -1,6 +1,6 @@
 .container {
   text-align: center;
-  background-color: #91ADF630;
+  background-color: #91adf630;
   width: 50%;
   margin: 0 auto;
   height: 600px;
@@ -11,7 +11,7 @@
 
 .header {
   margin-top: -43px;
-  font-family: 'Volkhov';
+  font-family: "Volkhov";
 }
 
 .inputs-group {

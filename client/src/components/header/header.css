@@ -1,12 +1,12 @@
 .header-container {
-  background-color: #8CA2D9;
+  background-color: #8ca2d9;
   overflow: hidden;
   position: fixed;
   top: 0;
   width: 100%;
   display: flex;
   align-items: center;
-  font-family: 'Volkhov';
+  font-family: "Volkhov";
 }
 
 .plane-image {

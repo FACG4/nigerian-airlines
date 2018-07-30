@@ -1,7 +1,7 @@
 .time-btn-style {
-  background-color:  #404040;
+  background-color: #404040;
   border: none;
-  color:#91ADF6;
+  color: #91adf6;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
@@ -11,6 +11,6 @@
   border-radius: 5px;
   width: 150px;
   height: 45px;
-  font-family: 'Volkhov';
+  font-family: "Volkhov";
   margin-bottom: 40px;
 }
