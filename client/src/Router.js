@@ -8,9 +8,14 @@ import UpdateFlight from "./pages/updateFlight";
 const Router = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" render={() => <Login />} />
-      <Route path="/addflight" component={AddFlight} />
-      <Route path="/updateflight" component={UpdateFlight} />
+      <Route
+        exact
+        path="/"
+        render={() => <h3>Home page under construction</h3>}
+      />
+      <Route exact path="/admin" render={() => <Login />} />
+      <Route path="/admin/addflight" component={AddFlight} />
+      <Route path="/admin/updateflight" component={UpdateFlight} />
     </Switch>
   </BrowserRouter>
 );

@@ -21,7 +21,7 @@ class Login extends Component {
     const { loginInfo } = this.state;
     const updatedLoginInfo = loginInfo;
     updatedLoginInfo[e.target.name] = e.target.value;
-    this.setState({ loginInfo: updatedLoginInfo });
+    this.setState({ loginInfo });
   };
 
   render() {
@@ -45,7 +45,7 @@ class Login extends Component {
           </div>
           <Button className="btn-style">Login</Button>
         </form>
-        {this.state.isLogin && <Redirect to={"/addflight"} />}
+        {this.state.isLogin && <Redirect to={"/admin/addflight"} />}
       </div>
     );
   }

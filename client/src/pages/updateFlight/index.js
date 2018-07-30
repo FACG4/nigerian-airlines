@@ -38,7 +38,7 @@ class UpdateFlight extends Component {
         <Header />
         <div className="container-content">
           <div className="sub-container-sidenav-form">
-            <SideNav thirdTap={true} />
+            <SideNav updateFlightTap={true} />
             <form
               className="sub-container-form"
               onSubmit={this.handleFlightUpdate}
