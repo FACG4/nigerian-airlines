@@ -15,7 +15,7 @@ export {
   Input,
   RadioButton,
   Select,
+  SideNav,
   TimeButton,
-  Table ,
-  Navbar 
-}
+  Table
+};

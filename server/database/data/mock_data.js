@@ -11,8 +11,8 @@ models.sequelize
 
 models.sequelize.sync({ force: true }).then(async () => {
   await models.Admin.create({
-    username: 'admin',
-    password: 'admin',
+    username: 'inass',
+    password: '$2y$12$Kg9mAf94WcFlb0VwBerwPO1degy64fELmt15pD8NjiP0Bcm5UytdW',
     email: 'admin@admin.com'
   });
 
@@ -39,7 +39,7 @@ models.sequelize.sync({ force: true }).then(async () => {
       gate: 'W-10',
       aircraft: 'BW',
     },
-    
+
   ]);
   await models.Customers.bulkCreate([
     {

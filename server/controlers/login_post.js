@@ -1,2 +1,3 @@
-import models from '../database/models';
-import uploadPhoto from './uploadPhotos';
+exports.post = (req, res) => {
+  console.log(req.body);
+};

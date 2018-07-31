@@ -6,8 +6,8 @@ export default (sequelize, DataTypes) => {
       unique: true
     },
     password: {
-      type: DataTypes.STRING(30),
-      allowNull: false,
+      type: DataTypes.STRING(100),
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING(50),
@@ -16,4 +16,4 @@ export default (sequelize, DataTypes) => {
     }
   });
   return Admin;
-}
+};
