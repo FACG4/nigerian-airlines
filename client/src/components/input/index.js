@@ -1,17 +1,25 @@
-import React, { Component } from 'react';
+import React from "react";
 
-import './input.css';
+import "./input.css";
 
-class Input extends Component {
-  render() {
-    const { labelText,  placeholder } = this.props;
-    return (
-      <div className='container-input'>
-        <label className='label-style'>{labelText}</label>
-        <input className='input-style' placeholder={placeholder}/>
-      </div>
-    );
-  }
-}
+const Input = ({
+  labelText,
+  placeholder,
+  onChange,
+  className,
+  name,
+  value
+}) => (
+  <div className="container-input">
+    <label className="label-style">{labelText}</label>
+    <input
+      name={name}
+      className={className}
+      placeholder={placeholder}
+      onChange={onChange}
+      value={value}
+    />
+  </div>
+);
 
 export default Input;

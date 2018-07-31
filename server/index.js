@@ -3,10 +3,13 @@ import app from './app';
 
 const port = app.get('port');
 
-models.sequelize.sync().then(() => {
-  app.listen(port, () => {
-    console.log(`Cool stuff is going on port ${port}`);
+models.sequelize
+  .sync()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Cool stuff is going on port ${port}`);
+    });
+  })
+  .catch((e) => {
+    console.warn('error', e);
   });
-}).catch((e) => {
-  console.warn('error', e);
-});

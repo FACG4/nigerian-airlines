@@ -1,10 +1,10 @@
 .sidenav-container {
   width: 20%;
-  background-color: #C4C4C425;
+  background-color: #c4c4c425;
   height: 100vh;
   padding-top: 10px;
   display: inline;
-  font-family: 'Volkhov';
+  font-family: "Volkhov";
   font-size: 15px;
 }
 
@@ -22,9 +22,13 @@
   padding: 15px;
 }
 
+/* repeat dislay flex because <a> didnt take li (parent element)styles  */
+
 .sidenav-container li a {
   text-decoration: none;
+  display: flex;
   color: black;
+  align-items: center;
 }
 
 .sidenav-container li:hover {

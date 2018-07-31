@@ -1,21 +1,54 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { Redirect, withRouter } from "react-router-dom";
 
-import './login.css';
-import { Input, Button } from '../../components'
+import { Input, Button } from "../../components";
+import "./login.css";
 
 class Login extends Component {
+  state = {
+    isLogin: false,
+    loginInfo: {}
+  };
+
+  handleLogin = e => {
+    e.preventDefault();
+    this.setState({
+      isLogin: !this.state.isLogin
+    });
+  };
+
+  handleTextInputChange = e => {
+    const { loginInfo } = this.state;
+    const updatedLoginInfo = loginInfo;
+    updatedLoginInfo[e.target.name] = e.target.value;
+    this.setState({ loginInfo });
+  };
+
   render() {
     return (
-        <div className="container">
-          <h1 className="header"> Admin Panel</h1>
+      <div className="container">
+        <h1 className="header"> Admin Panel</h1>
+        <form onSubmit={this.handleLogin}>
           <div className="inputs-group">
-            <Input iconclass='fa fa-user' placeholder='username' />
-            <Input iconclass='fas fa-unlock' placeholder='password' />
+            <Input
+              className="input-style"
+              placeholder="username"
+              name="username"
+              onChange={this.handleTextInputChange}
+            />
+            <Input
+              className="input-style"
+              placeholder="password"
+              name="password"
+              onChange={this.handleTextInputChange}
+            />
           </div>
-          <Button textvalue="Login"/>
-        </div>
+          <Button className="btn-style">Login</Button>
+        </form>
+        {this.state.isLogin && <Redirect to={"/admin/addflight"} />}
+      </div>
     );
   }
 }
 
-export default Login;
+export default withRouter(Login);

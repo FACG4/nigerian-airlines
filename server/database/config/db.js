@@ -28,7 +28,7 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
 
 const models = {
   sequelize,
-  Sequelize
+  Sequelize,
 };
 
 export default models;

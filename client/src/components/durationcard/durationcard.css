@@ -1,13 +1,13 @@
 .inline-div {
   float: right;
-  font-family: 'Volkhov';
+  font-family: "Volkhov";
 }
 
 .container-card {
   display: flex;
   align-items: center;
   border-radius: 10px;
-  background-color: #91ADF630;
+  background-color: #91adf630;
   width: 280px;
   padding: 10px;
   margin-bottom: 40px;

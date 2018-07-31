@@ -1,29 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-import './sidenav.css'
+import "./sidenav.css";
 
 class Sidenav extends Component {
   render() {
-    const { thirdTap } = this.props;
+    const { updateFlightTap } = this.props;
     return (
       <ul className="sidenav-container">
-
         <li>
-          <img src={require('./tables.png')} alt='tables' />
-          <a href="#">Flights</a>
+          <img src={require("./tables.png")} alt="tables" />
+          <Link to="/admin/flights">Flights</Link>
         </li>
-
         <li>
-          <img src={require('./addtable.png')} alt='atables' />
-          <a href="#">Add Flights</a>
+          <img src={require("./addtable.png")} alt="atables" />
+          <Link to="/admin/addflight">Add Flights</Link>
         </li>
-
-      { thirdTap &&
-        (<li>
-          <img src={require('./edittable.png')} alt='etables' />
-          <a href="#">Update flight status</a>
-        </li>)
-      }
+        {updateFlightTap && (
+          <li>
+            <img src={require("./edittable.png")} alt="etables" />
+            <Link to="/admin/updateflight">Update flight status</Link>
+          </li>
+        )}
       </ul>
     );
   }
