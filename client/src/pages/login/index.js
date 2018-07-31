@@ -1,26 +1,16 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import SweetAlert from "react-bootstrap-sweetalert";
+import { Redirect, withRouter } from "react-router-dom";
 
-// import { Input, Button } from "../../components";
-import Input from "../../components/input";
-import Button from "../../components/button";
+import { Input, Button } from "../../components";
 import "./login.css";
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      textInputValueUsername: "",
-      textInputValuePassword: "",
-      isLogin: false,
-      alert: null
-    };
-
-    this.handleUsernameInputChange = this.handleUsernameInputChange.bind(this);
-    this.handlePasswordInputChange = this.handlePasswordInputChange.bind(this);
-    this.handleLogin = this.handleLogin.bind(this);
-  }
+  state = {
+    isLogin: false,
+    alert: null,
+    loginInfo: {}
+  };
 
   errorPassOrUsername() {
     const getAlert = () => (
@@ -47,12 +37,12 @@ class Login extends Component {
     });
   }
 
-  handleLogin(e) {
+  handleLogin = e => {
     e.preventDefault();
-    const { textInputValueUsername, textInputValuePassword } = this.state;
+    const { username, password } = this.state.loginInfo;
     const data = JSON.stringify({
-      textInputValueUsername,
-      textInputValuePassword
+      username,
+      password
     });
     fetch("/login_post", {
       credentials: "same-origin",
@@ -80,44 +70,41 @@ class Login extends Component {
       .catch(err => {
         console.log("There has been an error ", err);
       });
-  }
+  };
 
-  handleUsernameInputChange(value) {
-    console.log(value);
-    this.setState({ textInputValueUsername: value });
-  }
-
-  handlePasswordInputChange(value) {
-    console.log(value);
-    this.setState({ textInputValuePassword: value });
-  }
+  handleTextInputChange = e => {
+    const { loginInfo } = this.state;
+    const updatedLoginInfo = loginInfo;
+    updatedLoginInfo[e.target.name] = e.target.value;
+    this.setState({ loginInfo });
+  };
 
   render() {
-    console.log(this.state.isLogin);
-
     return (
       <div className="container">
-        {this.state.alert}
         <h1 className="header"> Admin Panel</h1>
+        {this.state.alert}
         <form onSubmit={this.handleLogin}>
           <div className="inputs-group">
             <Input
-              iconclass="fa fa-user"
+              className="input-style"
               placeholder="username"
-              onTextInputChange={this.handleUsernameInputChange}
+              name="username"
+              onChange={this.handleTextInputChange}
             />
             <Input
-              iconclass="fas fa-unlock"
+              className="input-style"
               placeholder="password"
-              onTextInputChange={this.handlePasswordInputChange}
+              name="password"
+              onChange={this.handleTextInputChange}
             />
           </div>
-          <Button textvalue="Login" />
+          <Button className="btn-style">Login</Button>
         </form>
-        {this.state.isLogin && <Redirect to={"/addflight"} />}
+        {this.state.isLogin && <Redirect to={"/admin/addflight"} />}
       </div>
     );
   }
 }
 
-export default Login;
+export default withRouter(Login);

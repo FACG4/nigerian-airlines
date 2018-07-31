@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
-import './detailscard.css'
+import React, { Component } from "react";
+
+import "./detailscard.css";
 
 class Card extends Component {
   render() {
-    const { flightduration, destination , origin} = this.props;
+    const { flightduration, destination, origin } = this.props;
     return (
-      <div className='center-div'>
-        <div className='container-card-details'>
-          <label className='flightno-style'>Flight no.</label>
-          <div className='labels-container'>
-            <label className='details-label'>From</label>
-            <label className='float-style'>{origin}</label>
+      <div className="center-div">
+        <div className="container-card-details">
+          <label className="flightno-style">Flight no.</label>
+          <div className="labels-container">
+            <label className="details-label">From</label>
+            <label className="float-style">{origin}</label>
           </div>
-          <div className='labels-container'>
-            <label className='details-label'>To</label>
-            <label className='float-style'>{destination}</label>
+          <div className="labels-container">
+            <label className="details-label">To</label>
+            <label className="float-style">{destination}</label>
           </div>
-          <div className='labels-container'>
-            <label className='details-label'>Flight duration</label>
-            <label className='float-style'>{flightduration}</label>
+          <div className="labels-container">
+            <label className="details-label">Flight duration</label>
+            <label className="float-style">{flightduration}</label>
           </div>
         </div>
       </div>

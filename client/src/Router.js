@@ -1,9 +1,6 @@
-import React, { Component } from "react";
-import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
-import App from "./App";
-import Login from "./pages/login";
-import AddFlight from "./pages/addFlight";
-import UpdateFlight from "./pages/updateFlight";
+import React from "react";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { AddFlight, Login, UpdateFlight } from "./pages";
 
 const Router = () => (
   <BrowserRouter>
@@ -11,12 +8,13 @@ const Router = () => (
       <Route
         exact
         path="/"
-        render={({ history }) => <Login username="inass" />}
-        // render={() => (loggedIn ? <Redirect to="/AddFlight " /> : <Login />)}
+        render={() => <h3>Home page under construction</h3>}
       />
-      <Route path="/addflight" component={AddFlight} />
-      <Route path="/updateflight" component={UpdateFlight} />
+      <Route exact path="/admin" render={() => <Login />} />
+      <Route path="/admin/addflight" component={AddFlight} />
+      <Route path="/admin/updateflight" component={UpdateFlight} />
     </Switch>
   </BrowserRouter>
 );
+
 export default Router;

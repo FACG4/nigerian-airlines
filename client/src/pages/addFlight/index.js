@@ -14,10 +14,9 @@ import "./addflight.css";
 
 class AddFlight extends Component {
   state = {
+    form: {},
     originValue: "",
-    destinationValue: "",
-    dateValue: "",
-    airCraftTypeValue: ""
+    destinationValue: ""
   };
 
   handleAddFlight = e => {
@@ -27,7 +26,7 @@ class AddFlight extends Component {
       destinationValue,
       dateValue,
       airCraftTypeValue
-    } = this.state;
+    } = this.state.form;
     const data = JSON.stringify({
       originValue,
       destinationValue,
@@ -42,6 +41,7 @@ class AddFlight extends Component {
       method: "POST",
       body: data
     });
+    console.log(data);
   };
 
   handleSelectOriginChange = value => {
@@ -54,18 +54,20 @@ class AddFlight extends Component {
     this.setState({ destinationValue: value });
   };
 
-  handleFlightDateChange = value => {
+  handleSelectChange = value => {
     console.log(value);
-    this.setState({ dateValue: value });
+    this.setState({ selectValue: value });
   };
 
-  handleAircraftTypeChange = value => {
-    console.log(value);
-    this.setState({ airCraftTypeValue: value });
-  };
   calculateTime = e => {
     // e.preventDefault();
     console.log("Flight time calcuated");
+  };
+
+  handleInputChange = e => {
+    const { form } = this.state;
+    form[e.target.name] = e.target.value;
+    this.setState({ form });
   };
 
   render() {
@@ -95,13 +97,15 @@ class AddFlight extends Component {
                 labelText="Flight date"
                 placeholder="flight date"
                 className="input-style"
-                onTextInputChange={this.handleFlightDateChange}
+                name="dateValue"
+                onChange={this.handleInputChange}
               />
               <Input
                 labelText="Aircraft type"
                 placeholder="aircraft type"
                 className="input-style"
-                onTextInputChange={this.handleAircraftTypeChange}
+                name="airCraftTypeValue"
+                onChange={this.handleInputChange}
               />
               <div className="width-div">
                 <TimeButton

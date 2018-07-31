@@ -3,7 +3,7 @@ export default (sequelize, DataTypes) => {
     username: {
       type: DataTypes.STRING(30),
       allowNull: false,
-      unique: true
+      unique: true,
     },
     password: {
       type: DataTypes.STRING(100),
@@ -12,8 +12,8 @@ export default (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING(50),
       allowNull: false,
-      unique: true
-    }
+      unique: true,
+    },
   });
   return Admin;
-}
+};

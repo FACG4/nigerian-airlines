@@ -39,7 +39,6 @@ models.sequelize.sync({ force: true }).then(async () => {
       gate: 'W-10',
       aircraft: 'BW',
     },
-    
   ]);
   await models.Customers.bulkCreate([
     {
@@ -48,7 +47,7 @@ models.sequelize.sync({ force: true }).then(async () => {
       email: 'abdalsamad.y.m@gmail.com',
       phone: '0599194310',
       notify_me: true,
-      flight_id: 1
+      flight_id: 1,
     },
     {
       first_name: 'Balsam',
@@ -56,7 +55,7 @@ models.sequelize.sync({ force: true }).then(async () => {
       email: 'balsam@gmail.com',
       phone: '0599000001',
       notify_me: true,
-      flight_id: 1
+      flight_id: 1,
     },
     {
       first_name: 'Inass',
@@ -64,7 +63,7 @@ models.sequelize.sync({ force: true }).then(async () => {
       email: 'inass@gmail.com',
       phone: '05990000002',
       notify_me: false,
-      flight_id: 1
+      flight_id: 1,
     },
     {
       first_name: 'Ramy',
@@ -72,23 +71,15 @@ models.sequelize.sync({ force: true }).then(async () => {
       email: 'Ramy@gmail.com',
       phone: '05990000003',
       notify_me: true,
-      flight_id: 1
-    },
-    {
       first_name: 'John',
-      last_name: 'Rees',
       email: 'rees@gmail.com',
       phone: '05990000004',
       notify_me: true,
-      flight_id: 2
-    },
-    {
       first_name: 'Root',
-      last_name: 'Sam',
       email: 'root@gmail.com',
       phone: '05990000006',
       notify_me: true,
-      flight_id: 2
+      flight_id: 2,
     },
     {
       first_name: 'Finch',
@@ -96,7 +87,7 @@ models.sequelize.sync({ force: true }).then(async () => {
       email: 'finch@gmail.com',
       phone: '05990000009',
       notify_me: true,
-      flight_id: 2
+      flight_id: 2,
     },
   ]);
   await models.sequelize.close();
