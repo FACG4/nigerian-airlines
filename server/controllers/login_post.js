@@ -1,15 +1,7 @@
-// import bcrypt from 'bcryptjs';
-// import jwt from 'jsonwebtoken';
-// import cookie from 'cookie';
-// import models from '../database/models/index';
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 import models from '../database/models/index';
 
-const jwt = require('jsonwebtoken');
-const cookie = require('cookie');
-
-
-// exports.post = (req, res, next) => {
 export default(req, res, next) => {
   const { username, password } = req.body;
   models.Admin.findOne({ where: { username } }).then((result) => {

@@ -1,12 +1,11 @@
-const jwt = require('jsonwebtoken');
-require('env2')('./config.env');
+import jwt from 'jsonwebtoken';
+import env from 'env2';
 
+env('./config.env');
 
 export default(req, res, next) => {
   if (req.cookies.accessToken === undefined) {
-    console.log('notttttt allooe');
-
-    // res.redirect('/');
+    console.log('not allowed');
   } else {
     jwt.verify(req.cookies.accessToken, process.env.JWT_KEY, (err, decoded) => {
       if (err) {
@@ -20,4 +19,3 @@ export default(req, res, next) => {
     });
   }
 };
-// module.exports = verifyCookie;
