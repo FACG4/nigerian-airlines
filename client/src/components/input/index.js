@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './input.css';
 
@@ -13,14 +14,26 @@ class Input extends Component {
   }
 
   render() {
-    const { labelText, placeholder } = this.props;
+    const { labelText, placeholder, type } = this.props;
     return (
       <div className='container-input'>
         <label className='label-style'>{labelText}</label>
-        <input className='input-style' placeholder={placeholder} onChange={this.inputValue} />
+        <input
+          className='input-style'
+          placeholder={placeholder}
+          type={type}
+          onChange={this.inputValue}
+        />
       </div>
     );
   }
 }
+
+Input.propTypes = {
+  labelText: PropTypes.string,
+  placeholder: PropTypes.string,
+  type: PropTypes.string,
+  onTextInputChange: PropTypes.func
+};
 
 export default Input;

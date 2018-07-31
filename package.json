@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client:init": "cd client && npm i",
     "client:dev": "cd client && npm start",
-    "client:build": "cd client && npm run build"
+    "client:build": "cd client && npm run build",
+    "watch": "concurrently \"npm start\" \"npm client:dev\""
   },
   "author": "",
   "license": "ISC",
@@ -18,28 +19,36 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.3",
     "env2": "^2.2.2",
     "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
+    "prop-types": "^15.6.2",
+    "react-bootstrap-sweetalert": "^4.4.1",
     "sequelize": "^4.38.0",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "eslint-config-airbnb-base": "^13.0.0",
     "babel-eslint": "^7.2.3",
     "babel-preset-stage-1": "^6.24.1",
+    "concurrently": "^3.6.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-config-standard": "^7.1.0",
     "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx": "0.0.2",
     "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-standard": "^2.1.1",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.3",
+    "prettier": "^1.14.0"
   }
 }

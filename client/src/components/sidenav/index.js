@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import './sidenav.css';
 
-class Sidenav extends Component {
+class SideNav extends Component {
   render() {
     const { thirdTap } = this.props;
     return (
       <ul className='sidenav-container'>
         <li>
-          <img src={require('./tables.png')} alt='tables' />
+          <img src='./assets/imgs/tables.png' alt='tables' />
           <Link to='/flights'>Flights</Link>
         </li>
         <li>
-          <img src={require('./addtable.png')} alt='atables' />
+          <img src='./assets/imgs/addtable.png' alt='atables' />
           <Link to='/addflight'>Add Flights</Link>
         </li>
         { thirdTap &&
         (<li>
-          <img src={require('./edittable.png')} alt='etables' />
+          <img src='./assets/imgs/edittable.png' alt='etables' />
           <Link to='/updateflight'>Update flight status</Link>
         </li>
         )
@@ -28,4 +29,8 @@ class Sidenav extends Component {
   }
 }
 
-export default Sidenav;
+SideNav.propTypes = {
+  thirdTap: PropTypes.bool
+};
+
+export default SideNav;

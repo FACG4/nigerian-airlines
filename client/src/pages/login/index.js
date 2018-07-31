@@ -1,7 +1,15 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, {
+  Component
+} from 'react';
+import {
+  Redirect
+} from 'react-router-dom';
+import SweetAlert from 'react-bootstrap-sweetalert';
 
-import { Input, Button } from '../../components';
+import {
+  Input,
+  Button
+} from '../../components';
 import './login.css';
 
 class Login extends Component {
@@ -10,20 +18,45 @@ class Login extends Component {
     this.state = {
       textInputValueUsername: '',
       textInputValuePassword: '',
-      isLogin: false
+      isLogin: false,
+      alert: null
     };
 
     this.handleUsernameInputChange = this.handleUsernameInputChange.bind(this);
     this.handlePasswordInputChange = this.handlePasswordInputChange.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
+  }
 
+  errorPassOrUsername() {
+    const getAlert = () => (<SweetAlert
+      warning title = 'Wrong!'
+      confirmBtnBsStyle = 'danger'
+      cancelBtnBsStyle = 'danger'
+      onConfirm = {
+        () => this.hideAlert()
+      } >
+      Invalied Password or Username!
+    </SweetAlert>
+    );
+
+    this.setState({
+      alert: getAlert()
+    });
+  }
+
+  hideAlert() {
+    console.log('Hiding alert...');
+    this.setState({
+      alert: null
+    });
   }
 
   handleLogin(e) {
     e.preventDefault();
-    // this.loginStatus();
-    const { textInputValueUsername, textInputValuePassword } = this.state;
-    console.log('bb',textInputValueUsername);
+    const {
+      textInputValueUsername,
+      textInputValuePassword
+    } = this.state;
     const data = JSON.stringify({
       textInputValueUsername,
       textInputValuePassword
@@ -36,40 +69,64 @@ class Login extends Component {
       method: 'POST',
       body: data
     })
-      .then(res => res.json())
-      .catch(err => {
-        console.log('There has been an error in delete student', err);
-      });
-  }
+      .then(response => response.json(data))
+      .then(response => {
+        console.log('data', response);
 
-  loginStatus() {
-    // this.setState({
-    //   isLogin: !this.state.isLogin
-    // });
+        if (data.doneLogin) {
+          this.setState({
+            isLogin: true
+          });
+        } else {
+          this.setState({
+            isLogin: false
+          });
+          this.errorPassOrUsername();
+        }
+      })
+      .catch(err => {
+        console.log('There has been an error ', err);
+      });
   }
 
   handleUsernameInputChange(value) {
     console.log(value);
-    this.setState({ textInputValueUsername: value });
+    this.setState({
+      textInputValueUsername: value
+    });
   }
 
   handlePasswordInputChange(value) {
     console.log(value);
-    this.setState({ textInputValuePassword: value });
+    this.setState({
+      textInputValuePassword: value
+    });
   }
 
   render() {
+    console.log(this.state.isLogin);
+
     return (
       <div className='container'>
+        {this.state.alert}
         <h1 className='header'> Admin Panel</h1>
         <form onSubmit={this.handleLogin}>
           <div className='inputs-group'>
-            <Input iconclass='fa fa-user' placeholder='username' onTextInputChange={this.handleUsernameInputChange}/>
-            <Input iconclass='fas fa-unlock' placeholder='password' onTextInputChange={this.handlePasswordInputChange} />
+            <Input
+              iconclass='fa fa-user'
+              placeholder='username'
+              onTextInputChange={this.handleUsernameInputChange}
+            />
+            <Input
+              iconclass='fas fa-unlock'
+              placeholder='password'
+              type='password'
+              onTextInputChange={this.handlePasswordInputChange}
+            />
           </div>
           <Button textvalue='Login' />
         </form>
-        {/* {this.state.isLogin && <Redirect to={'/addflight'}/>} */}
+        {this.state.isLogin && <Redirect to={'/addflight'} />}
       </div>
     );
   }

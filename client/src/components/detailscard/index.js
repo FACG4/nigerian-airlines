@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './detailscard.css';
 
@@ -26,5 +27,11 @@ class Card extends Component {
     );
   }
 }
+
+Card.propTypes = {
+  flightduration: PropTypes.number,
+  destination: PropTypes.string,
+  origin: PropTypes.string
+};
 
 export default Card;

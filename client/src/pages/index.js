@@ -8,4 +8,4 @@ export {
   Flights,
   Login,
   UpdateFlight
-}
+};

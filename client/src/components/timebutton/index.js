@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import './timebutton.css'
+import './timebutton.css';
 
-class Timebutton extends Component {
+class TimeButton extends Component {
   render() {
     const { textvalue } = this.props;
     return (
@@ -10,4 +11,9 @@ class Timebutton extends Component {
     );
   }
 }
-export default Timebutton;
+
+TimeButton.propTypes = {
+  textvalue: PropTypes.string
+};
+
+export default TimeButton;
