@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Redirect } from 'react-router-dom';
 
-import './style.css'
+import './table.css'
 
 class Table extends React.Component{
   constructor(props){
@@ -25,7 +25,7 @@ class Table extends React.Component{
   render(){
     const { flightsArray } = this.props;
       return(
-          <table id ="table" >
+          <table className ="table-style" >
             <tbody>
               <tr>
                 <th>flight no.</th>

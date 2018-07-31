@@ -3,7 +3,8 @@ import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import {
   AddFlight,
   Login,
-  UpdateFlight
+  UpdateFlight,
+  Flights
 } from './pages';
 
 const Router = () => (
@@ -15,6 +16,7 @@ const Router = () => (
         render={({ history }) => <Login username='inass' />}
         // render={() => (loggedIn ? <Redirect to="/AddFlight " /> : <Login />)}
       />
+      <Route path='/flights' component={Flights} />
       <Route path='/addflight' component={AddFlight} />
       <Route path='/updateflight' component={UpdateFlight} />
     </Switch>

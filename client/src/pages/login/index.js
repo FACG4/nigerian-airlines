@@ -73,7 +73,7 @@ class Login extends Component {
       .then(response => {
         console.log('data', response);
 
-        if (data.doneLogin) {
+        if (response.doneLogin) {
           this.setState({
             isLogin: true
           });
@@ -126,7 +126,7 @@ class Login extends Component {
           </div>
           <Button textvalue='Login' />
         </form>
-        {this.state.isLogin && <Redirect to={'/addflight'} />}
+        {this.state.isLogin && <Redirect to={'/flights'} />}
       </div>
     );
   }

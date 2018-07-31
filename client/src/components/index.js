@@ -5,7 +5,8 @@ import Input from './input';
 import RadioButton from './radiobuttons';
 import Select from './select';
 import TimeButton from './timebutton';
-import Navbar from './navbar';
+import SideNav from './sidenav';
+import Header from './header';
 import Table from './table';
 
 export {
@@ -17,5 +18,6 @@ export {
   Select,
   SideNav,
   TimeButton,
-  Table
+  Table,
+  Header
 };
