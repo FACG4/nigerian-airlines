@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 
-import { DetailsCard, Input, Button, Header, SideNav, RadioButton} from '../../components'
+import { DetailsCard, Input, Button,  RadioButton} from '../../components'
 import '../addFlight/addflight.css';
 
 class UpdateFlight extends Component {
   render() {
     return (
-        <div className="addflight-container">
-          <Header />
+    
           <div className="container-content">
-            <div className="sub-container-sidenav-form">
-              <SideNav thirdTap={true}/>
               <div className="sub-container-form">
                 <DetailsCard flightduration='00 hours' destination='destination' origin='origin' />
                 <Input labelText='Departure time' iconclass='fa fa-user' placeholder='00:00:00 am' />
@@ -26,8 +23,6 @@ class UpdateFlight extends Component {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
     );
   }
 }

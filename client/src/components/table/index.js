@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import './style.css'
+
 class Table extends React.Component{
   constructor(props){
     super(props);
@@ -17,31 +17,23 @@ class Table extends React.Component{
     this.flightTime=this.flightTime.bind(this);
     this.flightDuration=this.flightDuration.bind(this);
   } 
-  
   handleChange=(e)=>{
     this.setState({flightNo:e.target.value})
     this.flightDate();
     this.flightTime();
     this.flightDuration();
   }
-
-  
   flightDate=(e)=>{
     this.setState({flightDate:e.target.value})
   }
   flightTime=(e)=>{
     this.setState({flightTime:e.target.value})
   }
-
   flightDuration=(e)=>{
     this.setState({flightDuration:e.target.value})
   }
-    render(){
-  
-
+  render(){
       return(
-        
-
       <div className ="rr">
           <table id ="table"   onChange={(event)=> this.handleChange(event)}>
             <tbody>
@@ -76,6 +68,4 @@ class Table extends React.Component{
       )}
                     
 }
-
-
 export default Table;

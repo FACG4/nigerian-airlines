@@ -6,12 +6,7 @@ import './addflight.css';
 class UpdateFlight extends Component {
   render() {
     return (
-        <div className="addflight-container">
-          <Header />
-          <div className="container-content">
-            <div className="sub-container-sidenav-form">
-              <SideNav />
-              <div className="sub-container-form">
+          <div className="sub-container-form">
                 <Select labelText='Origin' firstItem='from' cities={['city1','city2']}/>
                 <Select labelText='Destination' firstItem='to' cities={['city1','city2']} />
                 <Input labelText='Flight date' placeholder='flight date' />
@@ -24,9 +19,6 @@ class UpdateFlight extends Component {
                   <Button textvalue='Add'/>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
     );
   }
 }

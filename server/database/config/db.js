@@ -14,7 +14,7 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
   dialect: DB_DIALECT,
   operatorsAliases: false,
   host: process.env.HOSTNAME || 'localhost',
-  
+
   define: {
     underscored: true,
     freezeTableName: true,
