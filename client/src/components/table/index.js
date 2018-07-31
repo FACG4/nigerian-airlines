@@ -1,41 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Redirect } from 'react-router-dom';
+
 import './style.css'
 
 class Table extends React.Component{
   constructor(props){
     super(props);
-    this.state={  
-      flightNo :'',
-      flightDate:'',
-      flightTime:'',
-      flightDuration:'',
-      flightsArray:[]
-    }
-    this.handleChange=this.handleChange.bind(this);
-    this.flightDate=this.flightDate.bind(this);
-    this.flightTime=this.flightTime.bind(this);
-    this.flightDuration=this.flightDuration.bind(this);
+    this.handleFlight = this.handleFlight.bind(this);
   } 
-  handleChange=(e)=>{
-    this.setState({flightNo:e.target.value})
-    this.flightDate();
-    this.flightTime();
-    this.flightDuration();
+ 
+  flightDuration=(depature_time,arrival_time) => {        
+    const timeStart = new Date("01/01/2018 " + depature_time).getHours();
+    const timeEnd = new Date("01/01/2018 " + arrival_time).getHours();
+    const duration = timeEnd - timeStart;
+    return duration;
   }
-  flightDate=(e)=>{
-    this.setState({flightDate:e.target.value})
+
+  handleFlight() {
+    return(<Redirect to={'/updateflight:flight_no'} />)
+    // onClick={this.handleFlight(flight.flight_no)}
   }
-  flightTime=(e)=>{
-    this.setState({flightTime:e.target.value})
-  }
-  flightDuration=(e)=>{
-    this.setState({flightDuration:e.target.value})
-  }
+
   render(){
+    const { flightsArray } = this.props;
       return(
-      <div className ="rr">
-          <table id ="table"   onChange={(event)=> this.handleChange(event)}>
+          <table id ="table" >
             <tbody>
               <tr>
                 <th>flight no.</th>
@@ -43,28 +33,16 @@ class Table extends React.Component{
                 <th> flight time</th>
                 <th> flight duration</th>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
+              {flightsArray.map(flight => (
+                <tr>
+                <td>{flight.flight_no}</td>
+                <td>{flight.flight_date}</td>
+                <td>{flight.depature_time}</td>
+                <td>{this.flightDuration(flight.depature_time,flight.arrival_time)}</td>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+              ))}  
           </tbody>
-        </table>
-      </div> 
-      
+        </table>      
       )}
                     
 }
