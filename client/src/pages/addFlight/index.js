@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SweetAlert from "react-bootstrap-sweetalert";
 
 import {
   DurationCard,
@@ -9,29 +10,101 @@ import {
   Header,
   SideNav
 } from "../../components";
+
 import "./addflight.css";
 
-class UpdateFlight extends Component {
+class AddFlight extends Component {
   state = {
-    selectValue: ""
+    form: {},
+    selectedCity: {},
+    flightDuration: "",
+    succesfullyAdded: false,
+    alert: null
   };
 
   handleAddFlight = e => {
     e.preventDefault();
-    console.log("on added flights will be handled here");
+    const { dateValue, airCraftTypeValue } = this.state.form;
+    const { originValue, destinationValue } = this.state.selectedCity;
+
+    const data = JSON.stringify({
+      originValue,
+      destinationValue,
+      dateValue,
+      airCraftTypeValue
+    });
+    fetch("/addFlight_post", {
+      credentials: "same-origin",
+      headers: {
+        "content-type": "application/json"
+      },
+      method: "POST",
+      body: data
+    })
+      .then(response => response.json(data))
+      .then(data => {
+        if (data.succesfullyAdded) {
+          this.setState({
+            succesfullyAdded: true
+          });
+          this.handleSuceessAddFlight();
+        } else {
+          this.setState({
+            succesfullyAdded: false
+          });
+        }
+      })
+      .catch(err => {
+        console.log("There has been an error ", err);
+      });
   };
 
-  handleSelectChange = value => {
-    console.log(value);
-    this.setState({ selectValue: value });
+  handleSuceessAddFlight() {
+    const getAlert = () => (
+      <SweetAlert
+        success
+        title="Done!"
+        confirmBtnBsStyle="success"
+        cancelBtnBsStyle="success"
+        onConfirm={() => this.hideAlert()}
+      >
+        New Flight is Added
+      </SweetAlert>
+    );
+
+    this.setState({
+      alert: getAlert()
+    });
+  }
+
+  hideAlert() {
+    this.setState({
+      alert: null
+    });
+  }
+
+  handleSelectChange = e => {
+    const { selectedCity } = this.state;
+    const updatedSelectedCity = { ...selectedCity };
+    updatedSelectedCity[e.target.name] = e.target.value;
+    this.setState({ selectedCity: updatedSelectedCity });
   };
 
   calculateTime = e => {
-    // e.preventDefault();
-    console.log("Flight time calcuated");
+    e.preventDefault();
+    const randomNo = Math.floor(Math.random() * 11);
+    this.setState({ flightDuration: randomNo });
+  };
+
+  handleInputChange = e => {
+    const { form } = this.state;
+    const updatedForm = JSON.parse(JSON.stringify(form));
+    updatedForm[e.target.name] = e.target.value;
+    this.setState({ form: updatedForm });
   };
 
   render() {
+    const { alert } = this.state;
     return (
       <div className="addflight-container">
         <Header />
@@ -42,34 +115,41 @@ class UpdateFlight extends Component {
               className="sub-container-form"
               onSubmit={this.handleAddFlight}
             >
+              {alert}
               <Select
                 labelText="Origin"
                 firstItem="Select your orgin"
                 cities={["city1", "city2"]}
+                name="originValue"
                 onSelectChange={this.handleSelectChange}
               />
               <Select
                 labelText="Destination"
                 firstItem="Select your destination"
                 cities={["city1", "city2"]}
+                name="destinationValue"
                 onSelectChange={this.handleSelectChange}
               />
               <Input
                 labelText="Flight date"
                 placeholder="flight date"
                 className="input-style"
+                name="dateValue"
+                onChange={this.handleInputChange}
               />
               <Input
                 labelText="Aircraft type"
                 placeholder="aircraft type"
                 className="input-style"
+                name="airCraftTypeValue"
+                onChange={this.handleInputChange}
               />
               <div className="width-div">
                 <TimeButton
                   onClick={this.calculateTime}
                   textvalue="Calculate time"
                 />
-                <DurationCard flightduration="00 hours" />
+                <DurationCard flightduration={this.state.flightDuration} />
               </div>
               <div className="center-btn">
                 <Button className="btn-style">Add</Button>
@@ -82,4 +162,4 @@ class UpdateFlight extends Component {
   }
 }
 
-export default UpdateFlight;
+export default AddFlight;

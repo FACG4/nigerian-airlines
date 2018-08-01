@@ -4,9 +4,9 @@ import "./timebutton.css";
 
 class Timebutton extends Component {
   render() {
-    const { textvalue } = this.props;
+    const { textvalue, onClick } = this.props;
     return (
-      <button className="time-btn-style" type="button">
+      <button className="time-btn-style" onClick={onClick}>
         {textvalue}
       </button>
     );

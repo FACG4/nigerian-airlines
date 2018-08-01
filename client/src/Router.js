@@ -1,9 +1,6 @@
 import React from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-
-import AddFlight from "./pages/addFlight";
-import Login from "./pages/login";
-import UpdateFlight from "./pages/updateFlight";
+import { AddFlight, Login, UpdateFlight } from "./pages";
 
 const Router = () => (
   <BrowserRouter>

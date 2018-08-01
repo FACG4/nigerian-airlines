@@ -11,8 +11,8 @@ models.sequelize
 
 models.sequelize.sync({ force: true }).then(async () => {
   await models.Admin.create({
-    username: 'admin',
-    password: 'admin',
+    username: 'inass',
+    password: '$2y$12$Kg9mAf94WcFlb0VwBerwPO1degy64fELmt15pD8NjiP0Bcm5UytdW',
     email: 'admin@admin.com',
   });
 
@@ -39,7 +39,6 @@ models.sequelize.sync({ force: true }).then(async () => {
       gate: 'W-10',
       aircraft: 'BW',
     },
-
   ]);
   await models.Customers.bulkCreate([
     {
@@ -72,11 +71,11 @@ models.sequelize.sync({ force: true }).then(async () => {
       email: 'Ramy@gmail.com',
       phone: '05990000003',
       notify_me: true,
-      flight_id: 1,
+      flight_id: 2,
     },
     {
       first_name: 'John',
-      last_name: 'Rees',
+      last_name: 'Johnn',
       email: 'rees@gmail.com',
       phone: '05990000004',
       notify_me: true,
@@ -84,7 +83,7 @@ models.sequelize.sync({ force: true }).then(async () => {
     },
     {
       first_name: 'Root',
-      last_name: 'Sam',
+      last_name: 'hani',
       email: 'root@gmail.com',
       phone: '05990000006',
       notify_me: true,
