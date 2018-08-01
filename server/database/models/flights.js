@@ -17,8 +17,8 @@ export default (sequelize, DataTypes) => {
     destination: {
       type: DataTypes.STRING,
     },
-    flight_date :{
-      type: DataTypes.DATE
+    flight_date: {
+      type: DataTypes.DATE,
     },
     departure_time: {
       type: DataTypes.DATE,

@@ -13,7 +13,7 @@ models.sequelize.sync({ force: true }).then(async () => {
   await models.Admin.create({
     username: 'inass',
     password: '$2y$12$Kg9mAf94WcFlb0VwBerwPO1degy64fELmt15pD8NjiP0Bcm5UytdW',
-    email: 'admin@admin.com'
+    email: 'admin@admin.com',
   });
 
   await models.Flights.bulkCreate([
@@ -71,11 +71,19 @@ models.sequelize.sync({ force: true }).then(async () => {
       email: 'Ramy@gmail.com',
       phone: '05990000003',
       notify_me: true,
+      flight_id: 2,
+    },
+    {
       first_name: 'John',
+      last_name: 'Johnn',
       email: 'rees@gmail.com',
       phone: '05990000004',
       notify_me: true,
+      flight_id: 2,
+    },
+    {
       first_name: 'Root',
+      last_name: 'hani',
       email: 'root@gmail.com',
       phone: '05990000006',
       notify_me: true,

@@ -41,21 +41,17 @@ class AddFlight extends Component {
       method: "POST",
       body: data
     });
-    console.log(data);
   };
 
   handleSelectOriginChange = value => {
-    console.log(value);
     this.setState({ originValue: value });
   };
 
   handleSelectDestinationChange = value => {
-    console.log(value);
     this.setState({ destinationValue: value });
   };
 
   handleSelectChange = value => {
-    console.log(value);
     this.setState({ selectValue: value });
   };
 
@@ -66,8 +62,9 @@ class AddFlight extends Component {
 
   handleInputChange = e => {
     const { form } = this.state;
-    form[e.target.name] = e.target.value;
-    this.setState({ form });
+    const updatedForm = JSON.parse(JSON.stringify(form));
+    updatedForm[e.target.name] = e.target.value;
+    this.setState({ form: updatedForm });
   };
 
   render() {

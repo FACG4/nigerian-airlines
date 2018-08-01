@@ -4,14 +4,13 @@ import env from 'env2';
 env('./config.env');
 
 export default(req, res, next) => {
-  if (req.cookies.accessToken === undefined) {
+  if (req.cookies.AdminToken === undefined) {
     console.log('not allowed');
   } else {
-    jwt.verify(req.cookies.accessToken, process.env.JWT_KEY, (err, decoded) => {
+    jwt.verify(req.cookies.AdminToken, process.env.JWT_KEY, (err, decoded) => {
       if (err) {
-        res.clearCookie('accessToken');
+        res.clearCookie('AdminToken');
         console.log('notttttt allooe');
-        // res.redirect('/');
       } else {
         req.user = decoded;
         next();

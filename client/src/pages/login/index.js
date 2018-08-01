@@ -31,7 +31,6 @@ class Login extends Component {
   }
 
   hideAlert() {
-    console.log("Hiding alert...");
     this.setState({
       alert: null
     });
@@ -54,8 +53,6 @@ class Login extends Component {
     })
       .then(response => response.json(data))
       .then(data => {
-        console.log("data", data);
-
         if (data.doneLogin) {
           this.setState({
             isLogin: true
@@ -74,9 +71,9 @@ class Login extends Component {
 
   handleTextInputChange = e => {
     const { loginInfo } = this.state;
-    const updatedLoginInfo = loginInfo;
+    const updatedLoginInfo = Object.assign({}, loginInfo);
     updatedLoginInfo[e.target.name] = e.target.value;
-    this.setState({ loginInfo });
+    this.setState({ loginInfo: updatedLoginInfo });
   };
 
   render() {

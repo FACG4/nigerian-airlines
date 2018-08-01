@@ -10,7 +10,9 @@ export default(req, res, next) => {
         if (err) {
           next(err);
         } else if (isTrue) {
-          console.log('succcccccccssse loin');
+          // we will keep this consoles for now during the development
+          // until we handle all the error properly
+          console.log('succese loin');
           const secret = process.env.SECRET;
           const token = jwt.sign({
             id: result.dataValues.id,
