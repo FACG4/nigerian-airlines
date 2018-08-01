@@ -16,7 +16,8 @@ class AddFlight extends Component {
   state = {
     form: {},
     originValue: "",
-    destinationValue: ""
+    destinationValue: "",
+    flightDuration: ""
   };
 
   handleAddFlight = e => {
@@ -56,8 +57,9 @@ class AddFlight extends Component {
   };
 
   calculateTime = e => {
-    // e.preventDefault();
-    console.log("Flight time calcuated");
+    e.preventDefault();
+    const randomNo = Math.floor(Math.random() * 11);
+    this.setState({ flightDuration: randomNo });
   };
 
   handleInputChange = e => {
@@ -104,13 +106,15 @@ class AddFlight extends Component {
                 name="airCraftTypeValue"
                 onChange={this.handleInputChange}
               />
+
               <div className="width-div">
                 <TimeButton
                   onClick={this.calculateTime}
                   textvalue="Calculate time"
                 />
-                <DurationCard flightduration="00 hours" />
+                <DurationCard flightduration={this.state.flightDuration} />
               </div>
+
               <div className="center-btn">
                 <Button className="btn-style">Add</Button>
               </div>

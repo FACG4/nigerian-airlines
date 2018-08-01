@@ -12,6 +12,7 @@ class Card extends Component {
             Flight duration &nbsp; &nbsp;
           </label>
           <label className="duration-label">{flightduration}</label>
+          <label className="duration-label">hours</label>
         </div>
       </div>
     );
