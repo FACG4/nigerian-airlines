@@ -8,6 +8,8 @@ export default(req, res, next) => {
   models.Flights.create({
     originValue, destinationValue, dateValue, airCraftTypeValue,
   }).then((result) => {
-    console.log(result);
-  });
+    if (result) {
+      res.send({ succesfullyAdded: true });
+    }
+  }).catch((err) => { next(err); });
 };

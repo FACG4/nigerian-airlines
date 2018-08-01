@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SweetAlert from "react-bootstrap-sweetalert";
 
 import {
   DurationCard,
@@ -15,19 +16,17 @@ import "./addflight.css";
 class AddFlight extends Component {
   state = {
     form: {},
-    originValue: "",
-    destinationValue: "",
-    flightDuration: ""
+    selectedCity: {},
+    flightDuration: "",
+    succesfullyAdded: false,
+    alert: null
   };
 
   handleAddFlight = e => {
     e.preventDefault();
-    const {
-      originValue,
-      destinationValue,
-      dateValue,
-      airCraftTypeValue
-    } = this.state.form;
+    const { dateValue, airCraftTypeValue } = this.state.form;
+    const { originValue, destinationValue } = this.state.selectedCity;
+
     const data = JSON.stringify({
       originValue,
       destinationValue,
@@ -41,19 +40,54 @@ class AddFlight extends Component {
       },
       method: "POST",
       body: data
+    })
+      .then(response => response.json(data))
+      .then(data => {
+        if (data.succesfullyAdded) {
+          this.setState({
+            succesfullyAdded: true
+          });
+          this.handleSuceessAddFlight();
+        } else {
+          this.setState({
+            succesfullyAdded: false
+          });
+        }
+      })
+      .catch(err => {
+        console.log("There has been an error ", err);
+      });
+  };
+
+  handleSuceessAddFlight() {
+    const getAlert = () => (
+      <SweetAlert
+        success
+        title="Done!"
+        confirmBtnBsStyle="success"
+        cancelBtnBsStyle="success"
+        onConfirm={() => this.hideAlert()}
+      >
+        New Flight is Added
+      </SweetAlert>
+    );
+
+    this.setState({
+      alert: getAlert()
     });
-  };
+  }
 
-  handleSelectOriginChange = value => {
-    this.setState({ originValue: value });
-  };
+  hideAlert() {
+    this.setState({
+      alert: null
+    });
+  }
 
-  handleSelectDestinationChange = value => {
-    this.setState({ destinationValue: value });
-  };
-
-  handleSelectChange = value => {
-    this.setState({ selectValue: value });
+  handleSelectChange = e => {
+    const { selectedCity } = this.state;
+    const updatedSelectedCity = { ...selectedCity };
+    updatedSelectedCity[e.target.name] = e.target.value;
+    this.setState({ selectedCity: updatedSelectedCity });
   };
 
   calculateTime = e => {
@@ -70,6 +104,7 @@ class AddFlight extends Component {
   };
 
   render() {
+    const { alert } = this.state;
     return (
       <div className="addflight-container">
         <Header />
@@ -80,17 +115,20 @@ class AddFlight extends Component {
               className="sub-container-form"
               onSubmit={this.handleAddFlight}
             >
+              {alert}
               <Select
                 labelText="Origin"
                 firstItem="Select your orgin"
                 cities={["city1", "city2"]}
-                onSelectChange={this.handleSelectOriginChange}
+                name="originValue"
+                onSelectChange={this.handleSelectChange}
               />
               <Select
                 labelText="Destination"
                 firstItem="Select your destination"
                 cities={["city1", "city2"]}
-                onSelectChange={this.handleSelectDestinationChange}
+                name="destinationValue"
+                onSelectChange={this.handleSelectChange}
               />
               <Input
                 labelText="Flight date"
@@ -106,7 +144,6 @@ class AddFlight extends Component {
                 name="airCraftTypeValue"
                 onChange={this.handleInputChange}
               />
-
               <div className="width-div">
                 <TimeButton
                   onClick={this.calculateTime}
@@ -114,7 +151,6 @@ class AddFlight extends Component {
                 />
                 <DurationCard flightduration={this.state.flightDuration} />
               </div>
-
               <div className="center-btn">
                 <Button className="btn-style">Add</Button>
               </div>

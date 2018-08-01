@@ -19,14 +19,14 @@ export default(req, res, next) => {
             adminName: result.dataValues.username,
           }, secret);
           res.cookie('AdminToken', token);
-          res.send({ doneLogin: true, sweetAlert: 'false' });
+          res.send({ isLoggedIn: true, sweetAlert: 'false' });
         } else {
-          res.send({ doneLogin: false });
+          res.send({ isLoggedIn: false });
           console.log('Invalied Password or Username');
         }
       });
     } else {
-      res.send({ doneLogin: false });
+      res.send({ isLoggedIn: false });
       console.log('Invalied Password or Username');
     }
   });

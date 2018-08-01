@@ -7,17 +7,18 @@ import "./login.css";
 
 class Login extends Component {
   state = {
-    isLogin: false,
+    isLoggedIn: false,
     alert: null,
     loginInfo: {}
   };
 
-  errorPassOrUsername() {
+  invalidPasswordOrUsernameAlert() {
     const getAlert = () => (
       <SweetAlert
         warning
         title="Wrong!"
         confirmBtnBsStyle="danger"
+        s
         cancelBtnBsStyle="danger"
         onConfirm={() => this.hideAlert()}
       >
@@ -53,15 +54,15 @@ class Login extends Component {
     })
       .then(response => response.json(data))
       .then(data => {
-        if (data.doneLogin) {
+        if (data.isLoggedIn) {
           this.setState({
-            isLogin: true
+            isLoggedIn: true
           });
         } else {
           this.setState({
-            isLogin: false
+            isLoggedIn: false
           });
-          this.errorPassOrUsername();
+          this.invalidPasswordOrUsernameAlert();
         }
       })
       .catch(err => {
@@ -71,16 +72,17 @@ class Login extends Component {
 
   handleTextInputChange = e => {
     const { loginInfo } = this.state;
-    const updatedLoginInfo = Object.assign({}, loginInfo);
+    const updatedLoginInfo = { ...loginInfo };
     updatedLoginInfo[e.target.name] = e.target.value;
     this.setState({ loginInfo: updatedLoginInfo });
   };
 
   render() {
+    const { alert } = this.state;
     return (
       <div className="container">
         <h1 className="header"> Admin Panel</h1>
-        {this.state.alert}
+        {alert}
         <form onSubmit={this.handleLogin}>
           <div className="inputs-group">
             <Input
@@ -98,7 +100,7 @@ class Login extends Component {
           </div>
           <Button className="btn-style">Login</Button>
         </form>
-        {this.state.isLogin && <Redirect to={"/admin/addflight"} />}
+        {this.state.isLoggedIn && <Redirect to={"/admin/addflight"} />}
       </div>
     );
   }
