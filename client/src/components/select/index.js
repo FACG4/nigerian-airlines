@@ -1,11 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 import "./select.css";
 
-const Select = ({ labelText, firstItem, cities, name, onSelectChange }) => (
+const Select = ({
+  labelText,
+  className,
+  firstItem,
+  cities,
+  name,
+  onSelectChange
+}) => (
   <div className="container-select">
     <label className="label-style">{labelText}</label>
-    <select className="select-style" onChange={onSelectChange} name={name}>
+    <select className={className} onChange={onSelectChange} name={name}>
       <option value="" disabled selected>
         {firstItem}
       </option>
@@ -17,5 +25,13 @@ const Select = ({ labelText, firstItem, cities, name, onSelectChange }) => (
     </select>
   </div>
 );
+
+Select.propTypes = {
+  labelText: PropTypes.string,
+  firstItem: PropTypes.string,
+  cities: PropTypes.array,
+  name: PropTypes.string,
+  onSelectChange: PropTypes.func
+};
 
 export default Select;

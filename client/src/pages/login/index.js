@@ -86,21 +86,23 @@ class Login extends Component {
         <form onSubmit={this.handleLogin}>
           <div className="inputs-group">
             <Input
-              className="input-style"
+              className="input-style username-img"
               placeholder="username"
               name="username"
+              type="text"
               onChange={this.handleTextInputChange}
             />
             <Input
-              className="input-style"
+              className="input-style password-img"
               placeholder="password"
               name="password"
+              type="password"
               onChange={this.handleTextInputChange}
             />
           </div>
           <Button className="btn-style">Login</Button>
         </form>
-        {this.state.isLoggedIn && <Redirect to={"/admin/addflight"} />}
+        {this.state.isLoggedIn && <Redirect to={"/addflight"} />}
       </div>
     );
   }

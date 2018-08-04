@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client:init": "cd client && npm i",
     "client:dev": "cd client && npm start",
-    "client:build": "cd client && npm run build"
+    "client:build": "cd client && npm run build",
+    "watch": "concurrently \"npm start\" \"npm client:dev\""
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "babel-preset-env": "^1.7.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "concurrently": "^3.6.1",
     "cookie": "^0.3.1",
     "cookie-parser": "^1.4.3",
     "env2": "^2.2.2",

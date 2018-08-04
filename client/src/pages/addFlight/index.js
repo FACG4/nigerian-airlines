@@ -118,14 +118,16 @@ class AddFlight extends Component {
               {alert}
               <Select
                 labelText="Origin"
-                firstItem="Select your orgin"
+                className="select-style fromto-img"
+                firstItem="Orgin"
                 cities={["city1", "city2"]}
                 name="originValue"
                 onSelectChange={this.handleSelectChange}
               />
               <Select
                 labelText="Destination"
-                firstItem="Select your destination"
+                className="select-style fromto-img"
+                firstItem="Destination"
                 cities={["city1", "city2"]}
                 name="destinationValue"
                 onSelectChange={this.handleSelectChange}
@@ -133,14 +135,15 @@ class AddFlight extends Component {
               <Input
                 labelText="Flight date"
                 placeholder="flight date"
-                className="input-style"
+                className="input-style calender-img"
                 name="dateValue"
+                type="date"
                 onChange={this.handleInputChange}
               />
               <Input
                 labelText="Aircraft type"
                 placeholder="aircraft type"
-                className="input-style"
+                className="input-style plane-img"
                 name="airCraftTypeValue"
                 onChange={this.handleInputChange}
               />

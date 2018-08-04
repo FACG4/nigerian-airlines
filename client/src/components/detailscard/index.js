@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import "./detailscard.css";
 
@@ -21,5 +22,11 @@ const DetailsCard = ({ flightduration, destination, origin }) => (
     </div>
   </div>
 );
+
+DetailsCard.propTypes = {
+  flightduration: PropTypes.number,
+  destination: PropTypes.string,
+  origin: PropTypes.string
+};
 
 export default DetailsCard;

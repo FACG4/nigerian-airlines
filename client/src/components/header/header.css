@@ -6,6 +6,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-family: "Volkhov";
 }
 
@@ -13,9 +14,11 @@
   float: left;
   width: 70px;
   height: 70px;
+  margin: 10px 0 0 10px;
 }
 
 .username {
   float: right;
+  margin-right: 10px;
   color: #f2f2f2;
 }

@@ -10,9 +10,9 @@ const Router = () => (
         path="/"
         render={() => <h3>Home page under construction</h3>}
       />
-      <Route exact path="/admin" render={() => <Login />} />
-      <Route path="/admin/addflight" component={AddFlight} />
-      <Route path="/admin/updateflight" component={UpdateFlight} />
+      <Route path="/admin" render={() => <Login />} />
+      <Route path="/addflight" component={AddFlight} />
+      <Route path="/updateflight" component={UpdateFlight} />
     </Switch>
   </BrowserRouter>
 );
