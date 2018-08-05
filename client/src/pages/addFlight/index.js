@@ -118,7 +118,7 @@ class AddFlight extends Component {
               {alert}
               <Select
                 labelText="Origin"
-                className="select-style fromto-img"
+                className="fromto-img"
                 firstItem="Orgin"
                 cities={["city1", "city2"]}
                 name="originValue"
@@ -126,7 +126,7 @@ class AddFlight extends Component {
               />
               <Select
                 labelText="Destination"
-                className="select-style fromto-img"
+                className="fromto-img"
                 firstItem="Destination"
                 cities={["city1", "city2"]}
                 name="destinationValue"
