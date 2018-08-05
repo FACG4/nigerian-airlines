@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { Redirect, withRouter } from "react-router-dom";
 
-import { Input, Button } from "../../components";
+import { Input, Button } from "../../../components";
 import "./login.css";
 
 class Login extends Component {
@@ -18,7 +18,6 @@ class Login extends Component {
         warning
         title="Wrong!"
         confirmBtnBsStyle="danger"
-        s
         cancelBtnBsStyle="danger"
         onConfirm={() => this.hideAlert()}
       >
@@ -86,14 +85,16 @@ class Login extends Component {
         <form onSubmit={this.handleLogin}>
           <div className="inputs-group">
             <Input
-              className="input-style username-img"
+              labelClassName="label-style"
+              className="username-img"
               placeholder="username"
               name="username"
               type="text"
               onChange={this.handleTextInputChange}
             />
             <Input
-              className="input-style password-img"
+              labelClassName="label-style"
+              className="password-img"
               placeholder="password"
               name="password"
               type="password"
@@ -102,7 +103,7 @@ class Login extends Component {
           </div>
           <Button className="btn-style">Login</Button>
         </form>
-        {this.state.isLoggedIn && <Redirect to={"/addflight"} />}
+        {this.state.isLoggedIn && <Redirect to={"/admin/addflight"} />}
       </div>
     );
   }

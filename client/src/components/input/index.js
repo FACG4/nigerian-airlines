@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 
 import "./input.css";
 
@@ -10,13 +11,14 @@ const Input = ({
   className,
   name,
   type,
-  value
+  value,
+  labelClassName
 }) => (
   <div className="container-input">
-    <label className="label-style">{labelText}</label>
+    <label className={labelClassName}>{labelText}</label>
     <input
       name={name}
-      className={className}
+      className={classnames("input-style", className)}
       placeholder={placeholder}
       onChange={onChange}
       value={value}

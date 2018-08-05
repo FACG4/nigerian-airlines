@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Header, SideNav } from "../../components";
+import { Header, SideNav } from "../../../components";
 
 class Flight extends Component {
   render() {

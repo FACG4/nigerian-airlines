@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 
 import "./select.css";
 
@@ -13,7 +14,11 @@ const Select = ({
 }) => (
   <div className="container-select">
     <label className="label-style">{labelText}</label>
-    <select className={className} onChange={onSelectChange} name={name}>
+    <select
+      className={classnames("select-style", className)}
+      onChange={onSelectChange}
+      name={name}
+    >
       <option value="" disabled selected>
         {firstItem}
       </option>

@@ -9,7 +9,7 @@ import {
   Button,
   Header,
   SideNav
-} from "../../components";
+} from "../../../components";
 
 import "./addflight.css";
 
@@ -118,7 +118,7 @@ class AddFlight extends Component {
               {alert}
               <Select
                 labelText="Origin"
-                className="select-style fromto-img"
+                className="fromto-img"
                 firstItem="Orgin"
                 cities={["city1", "city2"]}
                 name="originValue"
@@ -126,24 +126,26 @@ class AddFlight extends Component {
               />
               <Select
                 labelText="Destination"
-                className="select-style fromto-img"
+                className="fromto-img"
                 firstItem="Destination"
                 cities={["city1", "city2"]}
                 name="destinationValue"
                 onSelectChange={this.handleSelectChange}
               />
               <Input
+                labelClassName="label-style"
                 labelText="Flight date"
                 placeholder="flight date"
-                className="input-style calender-img"
+                className="calender-img"
                 name="dateValue"
                 type="date"
                 onChange={this.handleInputChange}
               />
               <Input
+                labelClassName="label-style"
                 labelText="Aircraft type"
                 placeholder="aircraft type"
-                className="input-style plane-img"
+                className="plane-img"
                 name="airCraftTypeValue"
                 onChange={this.handleInputChange}
               />

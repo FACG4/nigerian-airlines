@@ -10,16 +10,16 @@ class SideNav extends Component {
     return (
       <ul className="sidenav-container">
         <li>
-          <img src="./assets/imgs/tables.png" alt="tables" />
+          <img src="/assets/imgs/tables.png" alt="tables" />
           <Link to="/admin/flights">Flights</Link>
         </li>
         <li>
-          <img src="./assets/imgs/addtable.png" alt="atables" />
+          <img src="/assets/imgs/addtable.png" alt="atables" />
           <Link to="/admin/addflight">Add Flights</Link>
         </li>
         {updateFlightTap && (
           <li>
-            <img src="./assets/imgs/edittable.png" alt="etables" />
+            <img src="/assets/imgs/edittable.png" alt="etables" />
             <Link to="/admin/updateflight">Update flight status</Link>
           </li>
         )}
