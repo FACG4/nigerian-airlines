@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 
-import { Input, Button, NavBar, Checkbox } from "../../../components";
-import "./check.css";
+import {
+  Input,
+  Button,
+  CustomerPageNavBar,
+  Checkbox
+} from "../../../components";
+import "./home.css";
 
-class Check extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,7 +68,7 @@ class Check extends Component {
   render() {
     return (
       <div className="cus-container">
-        <NavBar />
+        <CustomerPageNavBar />
         <h1 className="cus-h1-style">Track your flight</h1>
         <form onSubmit={this.handleCheck} className="cus-form-style">
           <div className="cus-inputs-group">
@@ -99,4 +104,4 @@ class Check extends Component {
   }
 }
 
-export default Check;
+export default Home;

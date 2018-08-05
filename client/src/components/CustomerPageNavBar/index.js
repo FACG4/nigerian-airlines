@@ -2,7 +2,7 @@ import React from "react";
 
 import "./navbar.css";
 
-const NavBar = () => (
+const CustomerPageNavBar = () => (
   <div className="navbar-style">
     <img
       src="./assets/imgs/flight.png"
@@ -13,4 +13,4 @@ const NavBar = () => (
   </div>
 );
 
-export default NavBar;
+export default CustomerPageNavBar;

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-import { NavBar, Tabs, Card } from "../../../components";
-import "./flightroute.css";
+import { CustomerPageNavBar, Tabs, Card } from "../../../components";
+import "./flightinfo.css";
 
 class FlightRoute extends Component {
   render() {
     return (
       <div className="flightroute-container">
-        <NavBar />
+        <CustomerPageNavBar />
         <Tabs classNameMap="map-style" />
         <div className="card-container">
           <Card

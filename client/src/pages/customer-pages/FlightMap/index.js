@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-import { NavBar, Tabs, DetailsCard } from "../../../components";
-import "./map.css";
+import { CustomerPageNavBar, Tabs, DetailsCard } from "../../../components";
+import "./flightmap.css";
 
-class MapTap extends Component {
+class FlightMap extends Component {
   render() {
     return (
       <div className="map-container">
-        <NavBar />
+        <CustomerPageNavBar />
         <Tabs classNameroute="flight-route-style" />
         <DetailsCard
           detailsTitle="Flight no."
@@ -28,4 +28,4 @@ class MapTap extends Component {
   }
 }
 
-export default MapTap;
+export default FlightMap;

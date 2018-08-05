@@ -17,7 +17,7 @@
 
 @media screen and (max-width: 500px) {
   .cus-btn-style {
-    background-color: #64B3A590;
+    background-color: #64b3a590;
     border: none;
     color: #313232;
     font-weight: bold;
@@ -29,7 +29,7 @@
     border-radius: 7px;
     width: 150px;
     height: 50px;
-    font-family: 'Voces';
+    font-family: "Voces";
     margin-top: 20px;
   }
 }

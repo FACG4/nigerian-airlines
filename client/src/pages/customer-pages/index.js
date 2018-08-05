@@ -1,5 +1,5 @@
-import Home from "./Check";
-import FlightInfo from "./FlightRouteTap";
-import FlightMap from "./MapTap";
+import Home from "./Home";
+import FlightInfo from "./FlightInfo";
+import FlightMap from "./FlightMap";
 
 export { FlightInfo, Home, FlightMap };

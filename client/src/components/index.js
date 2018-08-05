@@ -7,7 +7,7 @@ import RadioButton from "./radiobuttons";
 import Select from "./select";
 import SideNav from "./sidenav";
 import TimeButton from "./timebutton";
-import NavBar from "./NavBar";
+import CustomerPageNavBar from "./CustomerPageNavBar";
 import Checkbox from "./Checkbox";
 import Tabs from "./Tabs";
 import LabelImg from "./LabelImg";
@@ -23,7 +23,7 @@ export {
   Select,
   SideNav,
   TimeButton,
-  NavBar,
+  CustomerPageNavBar,
   Checkbox,
   Tabs,
   LabelImg,
