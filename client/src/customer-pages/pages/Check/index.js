@@ -58,34 +58,6 @@ class Check extends Component {
     e.preventDefault();
     const { textInputValueFlightNo } = this.state;
     console.log(textInputValueFlightNo);
-    const data = JSON.stringify({
-      no: "GA00jb1"
-    });
-    console.log(data);
-    fetch("/check_post", {
-      credentials: "same-origin",
-      headers: {
-        "content-type": "application/json"
-      },
-      method: "POST",
-      body: data
-    })
-      .then(response => response.json(data))
-      .then(data => {
-        if (data.isAvailable) {
-          this.setState({
-            isAvailable: true
-          });
-        } else {
-          this.setState({
-            isAvailable: false
-          });
-          this.invalidFlightNoAlert();
-        }
-      })
-      .catch(err => {
-        console.log("There has been an error ", err);
-      });
   };
 
   render() {
