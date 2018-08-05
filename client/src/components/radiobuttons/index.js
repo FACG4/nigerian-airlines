@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 import "./radiobutton.css";
 
@@ -38,5 +39,9 @@ class RadioButton extends Component {
     );
   }
 }
+
+RadioButton.propTypes = {
+  onRadioChange: PropTypes.func
+};
 
 export default RadioButton;
