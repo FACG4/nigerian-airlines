@@ -49,28 +49,28 @@ class UpdateFlight extends Component {
                 origin="origin"
               />
               <Input
-                className="input-style time-img"
+                className="time-img"
                 name="departureTime"
                 onChange={this.handleInputChange}
                 labelText="Departure time"
                 placeholder="00:00:00 am"
               />
               <Input
-                className="input-style departuretime-img"
+                className="departuretime-img"
                 name="boardingTime"
                 onChange={this.handleInputChange}
                 labelText="Boarding time"
                 placeholder="00:00:00 am"
               />
               <Input
-                className="input-style gate-img"
+                className="gate-img"
                 name="gateNo"
                 onChange={this.handleInputChange}
                 labelText="Gate no."
                 placeholder="ex:1234"
               />
               <Input
-                className="input-style terminalno-img"
+                className="terminalno-img"
                 name="terminalNo"
                 onChange={this.handleInputChange}
                 labelText="Terminal no."
