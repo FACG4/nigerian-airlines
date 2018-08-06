@@ -4,7 +4,7 @@ import app from './app';
 const port = app.get('port');
 
 models.sequelize
-  .sync()
+  .sync({ force: ture })
   .then(() => {
     app.listen(port, () => {
       console.log(`Cool stuff is going on port ${port}`);
