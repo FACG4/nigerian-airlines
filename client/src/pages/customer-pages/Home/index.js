@@ -10,32 +10,26 @@ import {
 import "./home.css";
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      textInputValueFlightNo: "",
-      checkboxValue: true,
-      isAvailable: false,
-      alert: null
-    };
+  state = {
+    textInputValueFlightNo: "",
+    checkboxValue: true,
+    isAvailable: false,
+    alert: null
+  };
 
-    this.handleNoInputChange = this.handleNoInputChange.bind(this);
-    this.handlecheckboxChange = this.handlecheckboxChange.bind(this);
-  }
-
-  handleNoInputChange(e) {
+  handleNoInputChange = e => {
     this.setState({
       textInputValueFlightNo: e.target.value
     });
-  }
+  };
 
-  handlecheckboxChange() {
+  handlecheckboxChange = () => {
     this.setState({
       checkboxValue: !this.state.checkboxValue
     });
-  }
+  };
 
-  invalidFlightNoAlert() {
+  invalidFlightNoAlert = () => {
     const getAlert = () => (
       <SweetAlert
         warning
@@ -51,7 +45,7 @@ class Home extends Component {
     this.setState({
       alert: getAlert()
     });
-  }
+  };
 
   hideAlert() {
     this.setState({
