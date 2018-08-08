@@ -1,0 +1,21 @@
+.tabs-style {
+  max-width: 600px;
+  width: 100vw;
+  height: 50px;
+  background-color: #64b3a5;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  top: 50px;
+  font-family: "Voces";
+  color: #ffffff;
+}
+.map-style,
+.flight-route-style {
+  opacity: 0.7;
+}
+.single-tab {
+  width: 180px;
+  text-align: center;
+}

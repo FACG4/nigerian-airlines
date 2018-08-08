@@ -9,7 +9,7 @@ import {
   Button,
   Header,
   SideNav
-} from "../../components";
+} from "../../../components";
 
 import "./addflight.css";
 

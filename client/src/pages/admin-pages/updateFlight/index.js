@@ -7,7 +7,7 @@ import {
   Header,
   SideNav,
   RadioButton
-} from "../../components";
+} from "../../../components";
 import "../addFlight/addflight.css";
 
 class UpdateFlight extends Component {
@@ -44,9 +44,12 @@ class UpdateFlight extends Component {
               onSubmit={this.handleFlightUpdate}
             >
               <DetailsCard
-                flightduration="00 hours"
-                destination="destination"
-                origin="origin"
+                detailsTitle="Flight no."
+                detailsInfoArray={[
+                  { subTitle: "from", titleValue: "origin" },
+                  { subTitle: "To", titleValue: "destination" },
+                  { subTitle: "Flight duration", titleValue: "00 hours" }
+                ]}
               />
               <Input
                 className="time-img"
@@ -77,7 +80,7 @@ class UpdateFlight extends Component {
                 placeholder="ex:1234"
               />
               <div className="width-div">
-                <label className="label-style">Status</label>
+                <label>Status</label>
                 <RadioButton onRadioChange={this.handleRadioChange} />
               </div>
               <div className="center-btn">

@@ -11,10 +11,13 @@ const Input = ({
   className,
   name,
   type,
-  value
+  value,
+  labelClassName
 }) => (
   <div className="container-input">
-    <label className="label-style">{labelText}</label>
+    <label className={classnames("label-style", labelClassName)}>
+      {labelText}
+    </label>
     <input
       name={name}
       className={classnames("input-style", className)}

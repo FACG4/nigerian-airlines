@@ -1,0 +1,21 @@
+.map-container {
+  background-color: #ecfcf9;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Voces";
+}
+hr.style {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+.div-label-container {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}

@@ -2,40 +2,21 @@ import React, { Component } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { Redirect, withRouter } from "react-router-dom";
 
-import { Input, Button } from "../../components";
+import { Input, Button } from "../../../components";
 import "./login.css";
 
 class Login extends Component {
   state = {
     isLoggedIn: false,
-    alert: null,
+    alert: false,
     loginInfo: {}
   };
 
-  invalidPasswordOrUsernameAlert() {
-    const getAlert = () => (
-      <SweetAlert
-        warning
-        title="Wrong!"
-        confirmBtnBsStyle="danger"
-        s
-        cancelBtnBsStyle="danger"
-        onConfirm={() => this.hideAlert()}
-      >
-        Invalied Password or Username !
-      </SweetAlert>
-    );
-
-    this.setState({
-      alert: getAlert()
-    });
-  }
-
-  hideAlert() {
+  hideAlert = () => {
     this.setState({
       alert: null
     });
-  }
+  };
 
   handleLogin = e => {
     e.preventDefault();
@@ -60,9 +41,9 @@ class Login extends Component {
           });
         } else {
           this.setState({
-            isLoggedIn: false
+            isLoggedIn: false,
+            alert: true
           });
-          this.invalidPasswordOrUsernameAlert();
         }
       })
       .catch(err => {
@@ -81,6 +62,17 @@ class Login extends Component {
     const { alert } = this.state;
     return (
       <div className="container">
+        {this.state.alert && (
+          <SweetAlert
+            warning
+            title="Wrong!"
+            confirmBtnBsStyle="danger"
+            cancelBtnBsStyle="danger"
+            onConfirm={this.hideAlert}
+          >
+            Invalied Password or Username !
+          </SweetAlert>
+        )}
         <h1 className="header"> Admin Panel</h1>
         {alert}
         <form onSubmit={this.handleLogin}>
@@ -102,7 +94,7 @@ class Login extends Component {
           </div>
           <Button className="btn-style">Login</Button>
         </form>
-        {this.state.isLoggedIn && <Redirect to={"/addflight"} />}
+        {this.state.isLoggedIn && <Redirect to={"/admin/addflight"} />}
       </div>
     );
   }

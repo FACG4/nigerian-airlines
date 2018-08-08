@@ -13,7 +13,7 @@ const Select = ({
   onSelectChange
 }) => (
   <div className="container-select">
-    <label className="label-style">{labelText}</label>
+    <label>{labelText}</label>
     <select
       className={classnames("select-style", className)}
       onChange={onSelectChange}
