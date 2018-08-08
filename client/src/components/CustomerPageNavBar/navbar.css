@@ -1,25 +1,23 @@
-@media screen and (max-width: 500px) {
-  .navbar-style {
-    max-width: 600px;
-    width: 100vw;
-    height: 50px;
-    background-color: #64B3A5;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    font-family: 'Voces';
-  }
-  .cus-plane-image {
-    width: 40px;
-    height: 40px;
-    padding-top: 5px;
-    margin-left: 5px;
-  }
-  .cus-app-name-style {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-left: 10px;
-  }
+.navbar-style {
+  max-width: 600px;
+  width: 100vw;
+  height: 50px;
+  background-color: #64b3a5;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  font-family: "Voces";
+}
+.cus-plane-image {
+  width: 40px;
+  height: 40px;
+  padding-top: 5px;
+  margin-left: 5px;
+}
+.cus-app-name-style {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-left: 10px;
 }

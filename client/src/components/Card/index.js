@@ -10,12 +10,12 @@ class Card extends Component {
     return (
       <div>
         <div className="title-style">{cardTitle}</div>
-        {info.map((item, i) => (
+        {info.map((item, index) => (
           <LabelImg
             labelText={item.labelText}
             imgSrc={item.imgSrc}
             ImgClassName={item.ImgClassName}
-            key={i}
+            key={index}
           />
         ))}
       </div>

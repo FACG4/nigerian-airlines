@@ -8,33 +8,15 @@ import "./login.css";
 class Login extends Component {
   state = {
     isLoggedIn: false,
-    alert: null,
+    alert: false,
     loginInfo: {}
   };
 
-  invalidPasswordOrUsernameAlert() {
-    const getAlert = () => (
-      <SweetAlert
-        warning
-        title="Wrong!"
-        confirmBtnBsStyle="danger"
-        cancelBtnBsStyle="danger"
-        onConfirm={() => this.hideAlert()}
-      >
-        Invalied Password or Username !
-      </SweetAlert>
-    );
-
-    this.setState({
-      alert: getAlert()
-    });
-  }
-
-  hideAlert() {
+  hideAlert = () => {
     this.setState({
       alert: null
     });
-  }
+  };
 
   handleLogin = e => {
     e.preventDefault();
@@ -59,9 +41,9 @@ class Login extends Component {
           });
         } else {
           this.setState({
-            isLoggedIn: false
+            isLoggedIn: false,
+            alert: true
           });
-          this.invalidPasswordOrUsernameAlert();
         }
       })
       .catch(err => {
@@ -80,12 +62,22 @@ class Login extends Component {
     const { alert } = this.state;
     return (
       <div className="container">
+        {this.state.alert && (
+          <SweetAlert
+            warning
+            title="Wrong!"
+            confirmBtnBsStyle="danger"
+            cancelBtnBsStyle="danger"
+            onConfirm={this.hideAlert}
+          >
+            Invalied Password or Username !
+          </SweetAlert>
+        )}
         <h1 className="header"> Admin Panel</h1>
         {alert}
         <form onSubmit={this.handleLogin}>
           <div className="inputs-group">
             <Input
-              labelClassName="label-style"
               className="username-img"
               placeholder="username"
               name="username"
@@ -93,7 +85,6 @@ class Login extends Component {
               onChange={this.handleTextInputChange}
             />
             <Input
-              labelClassName="label-style"
               className="password-img"
               placeholder="password"
               name="password"

@@ -1,7 +1,7 @@
 @media screen and (max-width: 500px) {
   .container-checkbox {
     width: 250px;
-    font-family: 'Voces';
+    font-family: "Voces";
     margin: 0 auto 30px auto;
     display: flex;
     justify-content: flex-start;
@@ -10,7 +10,7 @@
   .checkbox-style {
     padding-left: 40px;
     width: 15px;
-    height: 15px
+    height: 15px;
   }
   .label-checkbox-style {
     font-size: 12px;

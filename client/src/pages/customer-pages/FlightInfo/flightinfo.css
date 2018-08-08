@@ -1,29 +1,27 @@
-@media screen and (max-width: 500px) {
-  .flightroute-container {
-    background-color: #ECFCF9;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .form-style {
-    text-align: center;
-  }
-  .inputs-group {
-    width: 250px;
-  }
-  .h1-style {
-    font-family: 'Voces';
-    margin-bottom: 40px;
-    font-weight: normal;
-  }
-  .card-container {
-    margin-top: 100px;
-  }
-  .hr-style {
-    width: 300px;
-    margin: 20px 0;
-  }
+.flightroute-container {
+  background-color: #ecfcf9;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-style {
+  text-align: center;
+}
+.inputs-group {
+  width: 250px;
+}
+.h1-style {
+  font-family: "Voces";
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+.card-container {
+  margin-top: 100px;
+}
+.hr-style {
+  width: 300px;
+  margin: 20px 0;
 }

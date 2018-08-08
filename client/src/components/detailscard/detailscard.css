@@ -3,10 +3,10 @@
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
-  background-color: #91ADF630;
+  background-color: #91adf630;
   width: 50%;
   margin: 0 auto 40px auto;
-  font-family: 'Volkhov';
+  font-family: "Volkhov";
 }
 
 .details-title-style {
@@ -32,21 +32,19 @@
   margin-bottom: 10px;
 }
 
-@media screen and (max-width: 500px) {
-  .container-card-details {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 10px;
-    background-color: #64B3A520;
-    font-family: 'Voces';
-    font-size: 14px;
-    width: 300px;
-  }
-  .details-title-style {
-    text-align: center;
-    font-size: 15px;
-    width: 100%;
-    margin: 10px 0;
-  }
+.container-card-details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: #64b3a520;
+  font-family: "Voces";
+  font-size: 14px;
+  width: 300px;
+}
+.details-title-style {
+  text-align: center;
+  font-size: 15px;
+  width: 100%;
+  margin: 10px 0;
 }

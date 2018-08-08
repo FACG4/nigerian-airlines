@@ -15,7 +15,9 @@ const Input = ({
   labelClassName
 }) => (
   <div className="container-input">
-    <label className={labelClassName}>{labelText}</label>
+    <label className={classnames("label-style", labelClassName)}>
+      {labelText}
+    </label>
     <input
       name={name}
       className={classnames("input-style", className)}

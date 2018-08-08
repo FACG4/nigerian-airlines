@@ -1,21 +1,19 @@
-@media screen and (max-width: 500px) {
-  .cus-container {
-    background-color: #ECFCF9;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Voces';
-  }
-  .cus-form-style {
-    text-align: center;
-  }
-  .cus-inputs-group {
-    width: 250px;
-  }
-  .cus-h1-style {
-    margin-bottom: 40px;
-    font-weight: normal;
-  }
+.cus-container {
+  background-color: #ecfcf9;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Voces";
+}
+.cus-form-style {
+  text-align: center;
+}
+.cus-inputs-group {
+  width: 250px;
+}
+.cus-h1-style {
+  margin-bottom: 40px;
+  font-weight: normal;
 }

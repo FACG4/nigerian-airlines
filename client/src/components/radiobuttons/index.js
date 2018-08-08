@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import "./radiobutton.css";
 
@@ -18,7 +18,7 @@ class RadioButton extends Component {
           value="Cancled"
           onChange={this.radioValue}
         />
-        <label className="label-style">Cancled</label>
+        <label>Cancled</label>
         <input
           className="radioclass"
           type="radio"
@@ -26,7 +26,7 @@ class RadioButton extends Component {
           value="Delayed"
           onChange={this.radioValue}
         />
-        <label className="label-style">Delayed</label>
+        <label>Delayed</label>
         <input
           className="radioclass"
           type="radio"
@@ -34,7 +34,7 @@ class RadioButton extends Component {
           value="On time"
           onChange={this.radioValue}
         />
-        <label className="label-style">On time</label>
+        <label>On time</label>
       </div>
     );
   }

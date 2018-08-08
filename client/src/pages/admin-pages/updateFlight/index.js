@@ -52,7 +52,6 @@ class UpdateFlight extends Component {
                 ]}
               />
               <Input
-                labelClassName="label-style"
                 className="time-img"
                 name="departureTime"
                 onChange={this.handleInputChange}
@@ -60,7 +59,6 @@ class UpdateFlight extends Component {
                 placeholder="00:00:00 am"
               />
               <Input
-                labelClassName="label-style"
                 className="departuretime-img"
                 name="boardingTime"
                 onChange={this.handleInputChange}
@@ -68,7 +66,6 @@ class UpdateFlight extends Component {
                 placeholder="00:00:00 am"
               />
               <Input
-                labelClassName="label-style"
                 className="gate-img"
                 name="gateNo"
                 onChange={this.handleInputChange}
@@ -76,7 +73,6 @@ class UpdateFlight extends Component {
                 placeholder="ex:1234"
               />
               <Input
-                labelClassName="label-style"
                 className="terminalno-img"
                 name="terminalNo"
                 onChange={this.handleInputChange}
@@ -84,7 +80,7 @@ class UpdateFlight extends Component {
                 placeholder="ex:1234"
               />
               <div className="width-div">
-                <label className="label-style">Status</label>
+                <label>Status</label>
                 <RadioButton onRadioChange={this.handleRadioChange} />
               </div>
               <div className="center-btn">

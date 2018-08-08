@@ -133,7 +133,6 @@ class AddFlight extends Component {
                 onSelectChange={this.handleSelectChange}
               />
               <Input
-                labelClassName="label-style"
                 labelText="Flight date"
                 placeholder="flight date"
                 className="calender-img"
@@ -142,7 +141,6 @@ class AddFlight extends Component {
                 onChange={this.handleInputChange}
               />
               <Input
-                labelClassName="label-style"
                 labelText="Aircraft type"
                 placeholder="aircraft type"
                 className="plane-img"

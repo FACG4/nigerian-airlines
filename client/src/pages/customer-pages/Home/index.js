@@ -14,7 +14,7 @@ class Home extends Component {
     textInputValueFlightNo: "",
     checkboxValue: true,
     isAvailable: false,
-    alert: null
+    alert: false
   };
 
   handleNoInputChange = e => {
@@ -29,27 +29,9 @@ class Home extends Component {
     });
   };
 
-  invalidFlightNoAlert = () => {
-    const getAlert = () => (
-      <SweetAlert
-        warning
-        title="Wrong!"
-        confirmBtnBsStyle="danger"
-        cancelBtnBsStyle="danger"
-        onConfirm={() => this.hideAlert()}
-      >
-        Invalied Flight no. !
-      </SweetAlert>
-    );
-
-    this.setState({
-      alert: getAlert()
-    });
-  };
-
   hideAlert() {
     this.setState({
-      alert: null
+      alert: false
     });
   }
 
@@ -57,43 +39,55 @@ class Home extends Component {
     e.preventDefault();
     const { textInputValueFlightNo } = this.state;
     console.log(textInputValueFlightNo);
+    // ... To be added on another pull request
   };
 
   render() {
     return (
-      <div className="cus-container">
-        <CustomerPageNavBar />
-        <h1 className="cus-h1-style">Track your flight</h1>
-        <form onSubmit={this.handleCheck} className="cus-form-style">
-          <div className="cus-inputs-group">
-            <Input
-              labelClassName="cus-label-style"
-              className="cus-input-style calender-img"
-              labelText="Your flight date"
-              placeholder="Day DD/MM/Year"
-              type="date"
-              onChange={this.handledateInputChange}
+      <React.Fragment>
+        {this.state.alert && (
+          <SweetAlert
+            warning
+            title="Wrong!"
+            confirmBtnBsStyle="danger"
+            cancelBtnBsStyle="danger"
+            onConfirm={() => this.hideAlert()}
+          >
+            Invalied Flight no. !
+          </SweetAlert>
+        )}
+        <div className="cus-container">
+          <CustomerPageNavBar />
+          <h1 className="cus-h1-style">Track your flight</h1>
+          <form onSubmit={this.handleCheck} className="cus-form-style">
+            <div className="cus-inputs-group">
+              <Input
+                labelClassName="cus-label-style"
+                className="cus-input-style calender-img"
+                labelText="Your flight date"
+                placeholder="Day DD/MM/Year"
+                type="date"
+                onChange={this.handledateInputChange}
+              />
+              <Input
+                labelClassName="cus-label-style"
+                className="cus-input-style flightno-img"
+                labelText="Your flight Number"
+                placeholder="ex: 1234"
+                type="text"
+                onChange={this.handleNoInputChange}
+              />
+            </div>
+            <Checkbox
+              className="checkbox-style"
+              labelText="Keep me updated"
+              type="checkbox"
+              onTextInputChange={this.handlecheckboxChange}
             />
-            <Input
-              labelClassName="cus-label-style"
-              className="cus-input-style flightno-img"
-              labelText="Your flight Number"
-              placeholder="ex: 1234"
-              type="text"
-              onChange={this.handleNoInputChange}
-            />
-          </div>
-          <Checkbox
-            className="checkbox-style"
-            labelText="Keep me updated"
-            type="checkbox"
-            onTextInputChange={this.handlecheckboxChange}
-          />
-          <Button className="cus-btn-style" onClick={this.popup}>
-            Check
-          </Button>
-        </form>
-      </div>
+            <Button className="cus-btn-style">Check</Button>
+          </form>
+        </div>
+      </React.Fragment>
     );
   }
 }

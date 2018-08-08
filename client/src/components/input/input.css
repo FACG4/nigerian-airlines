@@ -20,7 +20,7 @@
 }
 
 .input-style::placeholder {
-  color: #1F2121;
+  color: #1f2121;
 }
 
 .label-style {
@@ -69,42 +69,40 @@
   background-size: 17px;
 }
 
-@media screen and (max-width: 500px) {
-  .container-input {
-    width: 250px;
-    height: 80px;
-    font-family: 'Voces';
-    margin: 0 auto 30px auto;
-  }
-  .cus-input-style {
-    background-color: #C4C4C470;
-    border: none;
-    padding: 5px;
-    border-radius: 8px;
-    width: 250px;
-    height: 40px;
-    background-repeat: no-repeat;
-    background-position-x: 10px;
-    background-position-y: center;
-    padding-left: 40px;
-    display: block;
-  }
-  .cus-input-style::placeholder {
-    color: #1F212170;
-  }
-  .cus-label-style {
-    font-size: 16px;
-    margin-bottom: 5px;
-    height: 30px;
-    display: block;
-    float: left;
-  }
-  .calender-img {
-    background-image: url(/assets/imgs/calender.svg);
-    background-size: 16px;
-  }
-  .flightno-img {
-    background-image: url(/assets/imgs/flightno.png);
-    background-size: 17px;
-  }
+.container-input {
+  width: 250px;
+  height: 80px;
+  font-family: "Voces";
+  margin: 0 auto 30px auto;
+}
+.cus-input-style {
+  background-color: #c4c4c470;
+  border: none;
+  padding: 5px;
+  border-radius: 8px;
+  width: 250px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position-x: 10px;
+  background-position-y: center;
+  padding-left: 40px;
+  display: block;
+}
+.cus-input-style::placeholder {
+  color: #1f212170;
+}
+.cus-label-style {
+  font-size: 16px;
+  margin-bottom: 5px;
+  height: 30px;
+  display: block;
+  float: left;
+}
+.calender-img {
+  background-image: url(/assets/imgs/calender.svg);
+  background-size: 16px;
+}
+.flightno-img {
+  background-image: url(/assets/imgs/flightno.png);
+  background-size: 17px;
 }
