@@ -11,33 +11,41 @@ models.sequelize
 
 models.sequelize.sync({ force: true }).then(async () => {
   await models.Admin.create({
-    username: 'inass',
-    password: '$2y$12$Kg9mAf94WcFlb0VwBerwPO1degy64fELmt15pD8NjiP0Bcm5UytdW',
+    username: 'admin',
+    password: '$2a$10$q5rMuzhOm95MvKB2Ed3edelE1ciM4K.gRR1Ddo96RpU8Tz2jLyznS',
     email: 'admin@admin.com',
   });
 
   await models.Flights.bulkCreate([
     {
-      airline: 'Gaza Airlines',
-      airport: 'Gaza Airport',
-      flight_no: 'GA001',
-      origin: 'Gaza',
-      destination: 'Berlin',
+      airline: 'Air Peace',
+      airport: 'Akanu Ibiam International Airport',
+      flight_no: 'APK-001',
+      origin: 'Lagos',
+      destination: 'Enugu',
       departure_time: '09-15-2018 22:00:00',
       arrival_time: '09-16-2018 09:00:00',
       gate: 'W-10',
-      aircraft: 'BW',
+      terminal_no: 'T-1',
+      aircraft: 'Airbus A321',
+      flight_date: '09-15-2018 22:00:00',
+      flight_duration: 3,
+      status: 'Cancelled',
     },
     {
-      airline: 'Nigeria Airlines',
-      airport: 'Lagos',
-      flight_no: 'NA001',
-      origin: 'Lagos',
-      destination: 'Aboja',
+      airline: 'Associated Aviation',
+      airport: 'Nnamdi Azikiwe International Airport',
+      flight_no: 'SCD-005',
+      origin: 'Port Harcourt',
+      destination: 'Asaba',
       departure_time: '09-15-2018 22:00:00',
       arrival_time: '09-16-2018 09:00:00',
       gate: 'W-10',
-      aircraft: 'BW',
+      terminal_no: 'T-1',
+      aircraft: 'Embraer ERJ 145',
+      flight_date: '09-15-2018 22:00:00',
+      flight_duration: 5,
+      status: 'Cancelled',
     },
   ]);
   await models.Customers.bulkCreate([
