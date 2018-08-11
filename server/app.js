@@ -9,9 +9,13 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set('port', process.env.PORT || 4001);
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+
 app.use('/api/v1', apiRouts);
+
+// catch all the routes that will load the html for any page request
+// on the react-router
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });

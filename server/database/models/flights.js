@@ -14,6 +14,9 @@ export default (sequelize, DataTypes) => {
     origin: {
       type: DataTypes.STRING,
     },
+    flight_duration: {
+      type: DataTypes.INTEGER,
+    },
     destination: {
       type: DataTypes.STRING,
     },
@@ -29,7 +32,13 @@ export default (sequelize, DataTypes) => {
     gate: {
       type: DataTypes.STRING,
     },
+    terminal_no: {
+      type: DataTypes.STRING,
+    },
     aircraft: {
+      type: DataTypes.STRING,
+    },
+    status: {
       type: DataTypes.STRING,
     },
   });
