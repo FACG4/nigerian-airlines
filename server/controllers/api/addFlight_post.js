@@ -13,7 +13,7 @@ export default(req, res, next) => {
     aircraft: airCraftTypeValue,
   }).then((result) => {
     if (result) {
-      res.status(200).send({ succesfullyAdded: true });
+      res.status(201).send({ succesfullyAdded: true, flightNo: result.flight_no });
     }
   }).catch((err) => { next(err); });
 };

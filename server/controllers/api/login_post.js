@@ -8,7 +8,7 @@ export default(req, res, next) => {
     if (result && result.dataValues) {
       bcrypt.compare(password, result.dataValues.password, (err, isTrue) => {
         if (err) {
-          res.stats(401).send({ isLoggedIn: false, error: 'Invalied Password or Username' });
+          res.status(401).send({ isLoggedIn: false, error: 'Invalied Password or Username' });
         } else if (isTrue) {
           const secret = process.env.SECRET;
           const token = jwt.sign({
@@ -16,13 +16,13 @@ export default(req, res, next) => {
             adminName: result.dataValues.username,
           }, secret);
           res.cookie('AdminToken', token);
-          res.stats(200).send({ isLoggedIn: true, sweetAlert: 'false' });
+          res.status(200).send({ isLoggedIn: true, sweetAlert: 'false' });
         } else {
           res.status(401).send({ isLoggedIn: false, error: 'Invalied Password or Username' });
         }
       });
     } else {
-      res.stats(401).send({ isLoggedIn: false, error: 'Invalied Password or Username' });
+      res.status(401).send({ isLoggedIn: false, error: 'Invalied Password or Username' });
     }
   });
 };
