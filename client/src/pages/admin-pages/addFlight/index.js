@@ -16,24 +16,30 @@ import "./addflight.css";
 class AddFlight extends Component {
   state = {
     form: {},
-    selectedCity: {},
+    selectedValue: {},
     flightDuration: "",
     succesfullyAdded: false,
-    alert: null
+    alert: false
   };
 
   handleAddFlight = e => {
     e.preventDefault();
-    const { dateValue, airCraftTypeValue } = this.state.form;
-    const { originValue, destinationValue } = this.state.selectedCity;
+
+    const {
+      flightDuration,
+      selectedValue: { originValue, destinationValue, airCraftTypeValue },
+      form: { dateValue, flightNumberValue }
+    } = this.state;
 
     const data = JSON.stringify({
+      flightDuration,
       originValue,
       destinationValue,
       dateValue,
-      airCraftTypeValue
+      airCraftTypeValue,
+      flightNumberValue
     });
-    fetch("/addFlight_post", {
+    fetch("/api/v1/addFlight_post", {
       credentials: "same-origin",
       headers: {
         "content-type": "application/json"
@@ -41,13 +47,13 @@ class AddFlight extends Component {
       method: "POST",
       body: data
     })
-      .then(response => response.json(data))
+      .then(response => response.json())
       .then(data => {
         if (data.succesfullyAdded) {
           this.setState({
-            succesfullyAdded: true
+            succesfullyAdded: true,
+            alert: true
           });
-          this.handleSuceessAddFlight();
         } else {
           this.setState({
             succesfullyAdded: false
@@ -59,40 +65,22 @@ class AddFlight extends Component {
       });
   };
 
-  handleSuceessAddFlight() {
-    const getAlert = () => (
-      <SweetAlert
-        success
-        title="Done!"
-        confirmBtnBsStyle="success"
-        cancelBtnBsStyle="success"
-        onConfirm={() => this.hideAlert()}
-      >
-        New Flight is Added
-      </SweetAlert>
-    );
-
+  hideAlert = () => {
     this.setState({
-      alert: getAlert()
+      alert: false
     });
-  }
-
-  hideAlert() {
-    this.setState({
-      alert: null
-    });
-  }
+  };
 
   handleSelectChange = e => {
-    const { selectedCity } = this.state;
-    const updatedSelectedCity = { ...selectedCity };
+    const { selectedValue } = this.state;
+    const updatedSelectedCity = { ...selectedValue };
     updatedSelectedCity[e.target.name] = e.target.value;
-    this.setState({ selectedCity: updatedSelectedCity });
+    this.setState({ selectedValue: updatedSelectedCity });
   };
 
   calculateTime = e => {
     e.preventDefault();
-    const randomNo = Math.floor(Math.random() * 11);
+    const randomNo = Math.floor(Math.random() * (10 - 5) + 5);
     this.setState({ flightDuration: randomNo });
   };
 
@@ -105,8 +93,20 @@ class AddFlight extends Component {
 
   render() {
     const { alert } = this.state;
+
     return (
       <div className="addflight-container">
+        {alert && (
+          <SweetAlert
+            success
+            title="Done!"
+            confirmBtnBsStyle="success"
+            cancelBtnBsStyle="success"
+            onConfirm={this.hideAlert}
+          >
+            New Flight is Added
+          </SweetAlert>
+        )}
         <Header />
         <div className="container-content">
           <div className="sub-container-sidenav-form">
@@ -118,21 +118,51 @@ class AddFlight extends Component {
               {alert}
               <Select
                 labelText="Origin"
+                name="originValue"
                 className="fromto-img"
                 firstItem="Orgin"
-                cities={["city1", "city2"]}
-                name="originValue"
+                cities={[
+                  "Abuja",
+                  "Enugu",
+                  "Kaduna",
+                  "Kano",
+                  "Lagos",
+                  "Port Harcourt",
+                  "Sokoto",
+                  "Asaba",
+                  "Bauchi"
+                ]}
                 onSelectChange={this.handleSelectChange}
               />
               <Select
+                name="destinationValue"
                 labelText="Destination"
                 className="fromto-img"
                 firstItem="Destination"
-                cities={["city1", "city2"]}
-                name="destinationValue"
+                cities={[
+                  "Abuja",
+                  "Enugu",
+                  "Kaduna",
+                  "Kano",
+                  "Lagos",
+                  "Port Harcourt",
+                  "Sokoto",
+                  "Asaba",
+                  "Bauchi"
+                ]}
                 onSelectChange={this.handleSelectChange}
               />
               <Input
+                labelClassName="label-style"
+                labelText="FlightNumber"
+                placeholder="flight number"
+                className="terminalno-img"
+                name="flightNumberValue"
+                type="text"
+                onChange={this.handleInputChange}
+              />
+              <Input
+                labelClassName="label-style"
                 labelText="Flight date"
                 placeholder="flight date"
                 className="calender-img"
@@ -140,12 +170,21 @@ class AddFlight extends Component {
                 type="date"
                 onChange={this.handleInputChange}
               />
-              <Input
+              <Select
                 labelText="Aircraft type"
-                placeholder="aircraft type"
                 className="plane-img"
                 name="airCraftTypeValue"
-                onChange={this.handleInputChange}
+                firstItem="AirCraft Type"
+                cities={[
+                  "Boeing 737-300",
+                  "Boeing 737-500",
+                  "Dornier 328-300",
+                  "Boeing 777-200LR",
+                  "Embraer ERJ 145",
+                  "Bombardier Q400",
+                  "Airbus A321"
+                ]}
+                onSelectChange={this.handleSelectChange}
               />
               <div className="width-div">
                 <TimeButton

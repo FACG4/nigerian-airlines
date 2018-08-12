@@ -8,34 +8,15 @@ import "./login.css";
 class Login extends Component {
   state = {
     isLoggedIn: false,
-    alert: null,
+    alert: false,
     loginInfo: {}
   };
 
-  invalidPasswordOrUsernameAlert() {
-    const getAlert = () => (
-      <SweetAlert
-        warning
-        title="Wrong!"
-        confirmBtnBsStyle="danger"
-        s
-        cancelBtnBsStyle="danger"
-        onConfirm={() => this.hideAlert()}
-      >
-        Invalied Password or Username !
-      </SweetAlert>
-    );
-
-    this.setState({
-      alert: getAlert()
-    });
-  }
-
-  hideAlert() {
+  hideAlert = () => {
     this.setState({
       alert: null
     });
-  }
+  };
 
   handleLogin = e => {
     e.preventDefault();
@@ -44,7 +25,7 @@ class Login extends Component {
       username,
       password
     });
-    fetch("/login_post", {
+    fetch("/api/v1/login_post", {
       credentials: "same-origin",
       headers: {
         "content-type": "application/json"
@@ -52,17 +33,20 @@ class Login extends Component {
       method: "POST",
       body: data
     })
-      .then(response => response.json(data))
+      .then(response => response.json())
       .then(data => {
+        sessionStorage.setItem("token", data.token);
+
         if (data.isLoggedIn) {
           this.setState({
             isLoggedIn: true
           });
+          data.isLoggedIn && (window.location = "/admin/flights");
         } else {
           this.setState({
-            isLoggedIn: false
+            isLoggedIn: false,
+            alert: true
           });
-          this.invalidPasswordOrUsernameAlert();
         }
       })
       .catch(err => {
@@ -78,10 +62,22 @@ class Login extends Component {
   };
 
   render() {
-    const { alert } = this.state;
+    const { alert, isLoggedIn } = this.state;
     return (
       <div className="container">
-        <h1 className="header"> Admin Panel</h1>
+        {alert && (
+          <SweetAlert
+            warning
+            title="Wrong!"
+            confirmBtnBsStyle="danger"
+            s
+            cancelBtnBsStyle="danger"
+            onConfirm={this.hideAlert}
+          >
+            Invalied Password or Username !
+          </SweetAlert>
+        )}
+        <h1 className="header">Admin Panel</h1>
         {alert}
         <form onSubmit={this.handleLogin}>
           <div className="inputs-group">
@@ -102,7 +98,7 @@ class Login extends Component {
           </div>
           <Button className="btn-style">Login</Button>
         </form>
-        {this.state.isLoggedIn && <Redirect to={"/addflight"} />}
+        {isLoggedIn && <Redirect to={"/admin/addflight"} />}
       </div>
     );
   }

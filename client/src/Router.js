@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import { AddFlight, Login, UpdateFlight } from "./pages";
+import { AddFlight, Login, UpdateFlight } from "./pages/admin-pages";
 
 const Router = () => (
   <BrowserRouter>
@@ -10,9 +10,9 @@ const Router = () => (
         path="/"
         render={() => <h3>Home page under construction</h3>}
       />
-      <Route path="/admin" render={() => <Login />} />
-      <Route path="/addflight" component={AddFlight} />
-      <Route path="/updateflight" component={UpdateFlight} />
+      <Route exact path="/admin" render={() => <Login />} />
+      <Route path="/admin/addflight" component={AddFlight} />
+      <Route path="/admin/updateflight" component={UpdateFlight} />
     </Switch>
   </BrowserRouter>
 );
