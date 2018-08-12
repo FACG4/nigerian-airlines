@@ -1,4 +1,4 @@
-import Button from "./button";
+import Button from "./Button";
 import DetailsCard from "./detailscard";
 import DurationCard from "./durationcard";
 import Header from "./header";
@@ -7,6 +7,12 @@ import RadioButton from "./radiobuttons";
 import Select from "./select";
 import SideNav from "./sidenav";
 import TimeButton from "./timebutton";
+import CustomerPageNavBar from "./CustomerPageNavBar";
+import Checkbox from "./Checkbox";
+import Tabs from "./Tabs";
+import LabelImg from "./LabelImg";
+import Card from "./Card";
+import Table from "./Table";
 
 export {
   Button,
@@ -17,5 +23,11 @@ export {
   RadioButton,
   Select,
   SideNav,
-  TimeButton
+  TimeButton,
+  CustomerPageNavBar,
+  Checkbox,
+  Tabs,
+  LabelImg,
+  Card,
+  Table
 };

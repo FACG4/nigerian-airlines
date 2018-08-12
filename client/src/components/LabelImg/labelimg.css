@@ -1,0 +1,38 @@
+@media screen and (max-width: 500px) {
+  .labelimg-style {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .label-for-img-style {
+    font-size: 14px;
+    font-family: "Voces";
+    margin-left: 20px;
+    color: black;
+  }
+  .delay-card-img {
+    width: 20px;
+    height: 20px;
+  }
+  .calender-card-img {
+    width: 20px;
+    height: 20px;
+  }
+  .gate-card-img {
+    width: 20px;
+    height: 20px;
+  }
+  .time-card-img {
+    width: 20px;
+    height: 20px;
+  }
+  .airline-card-img {
+    width: 20px;
+    height: 20px;
+  }
+  .city-card-img {
+    width: 25px;
+    height: 25px;
+  }
+}

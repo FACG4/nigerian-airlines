@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./sidenav.css";
 
@@ -9,19 +9,37 @@ class SideNav extends Component {
     const { updateFlightTap } = this.props;
     return (
       <ul className="sidenav-container">
-        <li>
-          <img src="./assets/imgs/tables.png" alt="tables" />
-          <Link to="/admin/flights">Flights</Link>
-        </li>
-        <li>
-          <img src="./assets/imgs/addtable.png" alt="atables" />
-          <Link to="/admin/addflight">Add Flights</Link>
-        </li>
-        {updateFlightTap && (
+        <NavLink
+          to="/admin/flights"
+          className="inactive"
+          activeClassName="active"
+        >
           <li>
-            <img src="./assets/imgs/edittable.png" alt="etables" />
-            <Link to="/admin/updateflight">Update flight status</Link>
+            <img src="/assets/imgs/tables.png" alt="tables" />
+            Flights
           </li>
+        </NavLink>
+        <NavLink
+          to="/admin/addflight"
+          className="inactive"
+          activeClassName="active"
+        >
+          <li>
+            <img src="/assets/imgs/addtable.png" alt="atables" />
+            Add Flight
+          </li>
+        </NavLink>
+        {updateFlightTap && (
+          <NavLink
+            to="/admin/updateflight"
+            className="inactive"
+            activeClassName="active"
+          >
+            <li>
+              <img src="/assets/imgs/edittable.png" alt="etables" />
+              Update flight status
+            </li>
+          </NavLink>
         )}
       </ul>
     );
