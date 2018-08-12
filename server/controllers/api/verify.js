@@ -3,14 +3,14 @@ import env from 'env2';
 
 env('./config.env');
 
-export default(req, res, next) => {
+export default (req, res, next) => {
   if (req.cookies.AdminToken === undefined) {
-    console.log('not allowed');
+    res.status(401).send({ msg: 'User is authorized' });
   } else {
     jwt.verify(req.cookies.AdminToken, process.env.JWT_KEY, (err, decoded) => {
       if (err) {
         res.clearCookie('AdminToken');
-        console.log('notttttt allooe');
+        res.status(401).send({ msg: 'User is authorized' });
       } else {
         req.user = decoded;
         next();

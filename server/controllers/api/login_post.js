@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import models from '../database/models/index';
+import models from '../../database/models/index';
 
 export default(req, res, next) => {
   const { username, password } = req.body;
@@ -8,26 +8,21 @@ export default(req, res, next) => {
     if (result && result.dataValues) {
       bcrypt.compare(password, result.dataValues.password, (err, isTrue) => {
         if (err) {
-          next(err);
+          res.status(401).send({ isLoggedIn: false, error: 'Invalied Password or Username' });
         } else if (isTrue) {
-          // we will keep this consoles for now during the development
-          // until we handle all the error properly
-          console.log('succese loin');
           const secret = process.env.SECRET;
           const token = jwt.sign({
             id: result.dataValues.id,
             adminName: result.dataValues.username,
           }, secret);
           res.cookie('AdminToken', token);
-          res.send({ isLoggedIn: true, sweetAlert: 'false' });
+          res.status(200).send({ isLoggedIn: true, sweetAlert: 'false' });
         } else {
-          res.send({ isLoggedIn: false });
-          console.log('Invalied Password or Username');
+          res.status(401).send({ isLoggedIn: false, error: 'Invalied Password or Username' });
         }
       });
     } else {
-      res.send({ isLoggedIn: false });
-      console.log('Invalied Password or Username');
+      res.status(401).send({ isLoggedIn: false, error: 'Invalied Password or Username' });
     }
   });
 };
