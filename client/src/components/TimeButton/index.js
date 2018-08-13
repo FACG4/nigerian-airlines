@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 import "./timebutton.css";
 
-const TimeButton = ({ textvalue, onClick }) => (
-  <button className="time-btn-style" onClick={onClick}>
+const TimeButton = ({ textvalue, ...allAttributes }) => (
+  <button className="time-btn-style" {...allAttributes}>
     {textvalue}
   </button>
 );

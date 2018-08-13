@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 
 import "./detailscard.css";
 
-const DetailsCard = ({ boarding_time, destination, origin, flight_no }) => (
+const DetailsCard = ({ boardingTime, destination, origin, flightNo }) => (
   <div className="center-div">
     <div className="container-card-details">
       <div className="labels-container">
         <label className="details-label">Flight number</label>
-        <label className="float-style">{flight_no}</label>
+        <label className="float-style">{flightNo}</label>
       </div>
       <div className="labels-container">
         <label className="details-label">From</label>
@@ -20,7 +20,7 @@ const DetailsCard = ({ boarding_time, destination, origin, flight_no }) => (
       </div>
       <div className="labels-container">
         <label className="details-label">Arrival Time</label>
-        <label className="float-style">{boarding_time}</label>
+        <label className="float-style">{boardingTime}</label>
       </div>
     </div>
   </div>

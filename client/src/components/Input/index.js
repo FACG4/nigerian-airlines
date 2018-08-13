@@ -4,27 +4,14 @@ import classnames from "classnames";
 
 import "./input.css";
 
-const Input = ({
-  labelText,
-  placeholder,
-  onChange,
-  className,
-  name,
-  type,
-  value,
-  labelClassName
-}) => (
+const Input = ({ labelText, className, labelClassName, ...allAttributes }) => (
   <div className="container-input">
     <label className={classnames("label-style", labelClassName)}>
       {labelText}
     </label>
     <input
-      name={name}
       className={classnames("input-style", className)}
-      placeholder={placeholder}
-      onChange={onChange}
-      value={value}
-      type={type}
+      {...allAttributes}
     />
   </div>
 );

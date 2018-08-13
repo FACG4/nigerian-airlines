@@ -10,14 +10,17 @@ class Card extends Component {
     return (
       <div>
         <div className="title-style">{cardTitle}</div>
-        {info.map((item, i) => (
-          <LabelImg
-            labelText={item.labelText}
-            imgSrc={item.imgSrc}
-            ImgClassName={item.ImgClassName}
-            key={i}
-          />
-        ))}
+        {info.map((item, index) => {
+          const { labelText, imgSrc, imgClassName } = item;
+          return (
+            <LabelImg
+              labelText={labelText}
+              imgSrc={imgSrc}
+              ImgClassName={imgClassName}
+              key={index}
+            />
+          );
+        })}
       </div>
     );
   }

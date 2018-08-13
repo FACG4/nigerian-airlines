@@ -2,10 +2,10 @@ import React from "react";
 
 import "./tabs.css";
 
-const Tabs = ({ classNameroute, classNameMap }) => (
+const Tabs = ({ className }) => (
   <div className="tabs-style">
-    <div className={classNameroute}>Flight route</div>
-    <div className={classNameMap}>Map</div>
+    <div className={className}>Flight route</div>
+    <div className={className}>Map</div>
   </div>
 );
 
