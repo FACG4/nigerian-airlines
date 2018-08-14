@@ -19,7 +19,8 @@ class AddFlight extends Component {
     selectedValue: {},
     flightDuration: "",
     succesfullyAdded: false,
-    alert: false
+    alert: false,
+    error: false
   };
 
   handleAddFlight = e => {
@@ -61,7 +62,9 @@ class AddFlight extends Component {
         }
       })
       .catch(err => {
-        console.log("There has been an error ", err);
+        this.setState({
+          error: true
+        });
       });
   };
 
@@ -73,8 +76,9 @@ class AddFlight extends Component {
 
   handleSelectChange = e => {
     const { selectedValue } = this.state;
+    const { name, value } = e.target;
     const updatedSelectedCity = { ...selectedValue };
-    updatedSelectedCity[e.target.name] = e.target.value;
+    updatedSelectedCity[name] = value;
     this.setState({ selectedValue: updatedSelectedCity });
   };
 
@@ -93,7 +97,6 @@ class AddFlight extends Component {
 
   render() {
     const { alert } = this.state;
-
     return (
       <div className="addflight-container">
         {alert && (
@@ -115,7 +118,6 @@ class AddFlight extends Component {
               className="sub-container-form"
               onSubmit={this.handleAddFlight}
             >
-              {alert}
               <Select
                 labelText="Origin"
                 name="originValue"

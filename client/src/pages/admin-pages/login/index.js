@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
-import { Redirect, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import { Input, Button } from "../../../components";
 import "./login.css";
@@ -9,7 +9,8 @@ class Login extends Component {
   state = {
     isLoggedIn: false,
     alert: false,
-    loginInfo: {}
+    loginInfo: {},
+    error: false
   };
 
   hideAlert = () => {
@@ -41,7 +42,7 @@ class Login extends Component {
           this.setState({
             isLoggedIn: true
           });
-          data.isLoggedIn && (window.location = "/admin/flights");
+          data.isLoggedIn && this.props.history.push("/admin/flights");
         } else {
           this.setState({
             isLoggedIn: false,
@@ -50,7 +51,7 @@ class Login extends Component {
         }
       })
       .catch(err => {
-        console.log("There has been an error ", err);
+        this.setState({ alert: true });
       });
   };
 
@@ -62,7 +63,7 @@ class Login extends Component {
   };
 
   render() {
-    const { alert, isLoggedIn } = this.state;
+    const { alert } = this.state;
     return (
       <div className="container">
         {alert && (
@@ -78,7 +79,6 @@ class Login extends Component {
           </SweetAlert>
         )}
         <h1 className="header">Admin Panel</h1>
-        {alert}
         <form onSubmit={this.handleLogin}>
           <div className="inputs-group">
             <Input
@@ -98,7 +98,6 @@ class Login extends Component {
           </div>
           <Button className="btn-style">Login</Button>
         </form>
-        {isLoggedIn && <Redirect to={"/admin/addflight"} />}
       </div>
     );
   }
