@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { Redirect, withRouter } from "react-router-dom";
 
-import { Input, Button } from "../../components";
+import { Input, Button } from "../../../components";
 import "./login.css";
 
 class Login extends Component {
