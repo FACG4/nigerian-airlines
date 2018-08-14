@@ -1,9 +1,9 @@
 import express from 'express';
-import login from './login_post';
-import addFlight from './addFlight_post';
-import flights from './flight_get';
-import updateFlight from './updateFlight_post';
-import editFlightInformation from './editFlightInformation_post';
+import login from './login';
+import addFlight from './addFlight';
+import flights from './flights';
+import updateFlight from './updateFlight';
+import editFlightInformation from './editFlight';
 
 const router = express.Router();
 
