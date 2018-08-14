@@ -4,7 +4,7 @@ export default(req, res, next) => {
   const {
     gateNo, status, terminalNo, departureTime,
   } = req.body;
-  const flightNo = req.params.flightId;
+  const { flightId: flightNo } = req.params.flightId;
 
   models.Flights
     .update({
