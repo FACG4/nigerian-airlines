@@ -24,16 +24,15 @@ class UpdateFlight extends Component {
     error: true
   };
   componentDidMount() {
-    const data = JSON.stringify({
-      flightNo
-    });
-    fetch("/api/v1/updateflight_post", {
+    // const data = JSON.stringify({
+    //   flightNo
+    // });
+    fetch(`/api/v1/flight/${flightNo}`, {
       credentials: "same-origin",
       headers: {
         "content-type": "application/json"
       },
-      method: "POST",
-      body: data
+      method: "GET"
     })
       .then(response => response.json())
       .then(response => {
@@ -56,7 +55,7 @@ class UpdateFlight extends Component {
       flightNo,
       status
     });
-    fetch("/api/v1/editFlightInformation_post", {
+    fetch(`/api/v1/flight/${flightNo}`, {
       credentials: "same-origin",
       headers: {
         "content-type": "application/json"

@@ -40,7 +40,7 @@ class AddFlight extends Component {
       airCraftTypeValue,
       flightNumberValue
     });
-    fetch("/api/v1/addFlight_post", {
+    fetch("/api/v1/flight", {
       credentials: "same-origin",
       headers: {
         "content-type": "application/json"

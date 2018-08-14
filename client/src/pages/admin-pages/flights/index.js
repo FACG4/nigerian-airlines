@@ -7,7 +7,7 @@ class Flight extends Component {
     flight_no: ""
   };
   componentDidMount() {
-    fetch("/api/v1/flight_get", {
+    fetch("/api/v1/flights", {
       credentials: "same-origin",
       headers: {
         "content-type": "application/json"

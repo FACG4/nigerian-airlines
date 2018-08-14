@@ -1,7 +1,7 @@
 import models from '../../database/models/index';
 
 export default (req, res, next) => {
-  const flightNumber = req.body.flightNo;
+  const flightNumber = req.params.flightId;
 
   models.Flights.findOne({ where: { flight_no: flightNumber } }).then((result) => {
     let resultFlightInformation = {};

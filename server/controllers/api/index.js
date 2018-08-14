@@ -7,12 +7,10 @@ import editFlightInformation from './editFlightInformation_post';
 
 const router = express.Router();
 
-// reminder: routes naming should be edited later
-// on both clinet and server side!!
-router.post('/login_post', login);
-router.post('/addFlight_post', addFlight);
-router.get('/flight_get', flights);
-router.post('/updateflight_post', updateFlight);
-router.post('/editFlightInformation_post', editFlightInformation);
+router.post('/login', login);
+router.post('/flight', addFlight);
+router.get('/flights', flights);
+router.get('/flight/:flightId', updateFlight);
+router.post('/flight/:flightId', editFlightInformation);
 
 export default router;

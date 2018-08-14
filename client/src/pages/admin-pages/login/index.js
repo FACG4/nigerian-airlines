@@ -26,7 +26,7 @@ class Login extends Component {
       username,
       password
     });
-    fetch("/api/v1/login_post", {
+    fetch("/api/v1/login", {
       credentials: "same-origin",
       headers: {
         "content-type": "application/json"
