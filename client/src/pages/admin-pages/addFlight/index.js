@@ -129,11 +129,8 @@ class AddFlight extends Component {
                   "Abuja",
                   "Enugu",
                   "Kaduna",
-                  "Kano",
-                  "Lagos",
-                  "Port Harcourt",
+                  "Surulere",
                   "Sokoto",
-                  "Asaba",
                   "Bauchi"
                 ]}
                 onSelectChange={this.handleSelectChange}
@@ -147,11 +144,8 @@ class AddFlight extends Component {
                   "Abuja",
                   "Enugu",
                   "Kaduna",
-                  "Kano",
-                  "Lagos",
-                  "Port Harcourt",
+                  "Surulere",
                   "Sokoto",
-                  "Asaba",
                   "Bauchi"
                 ]}
                 onSelectChange={this.handleSelectChange}
