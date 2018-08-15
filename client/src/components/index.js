@@ -13,6 +13,7 @@ import Tabs from "./Tabs";
 import LabelImg from "./LabelImg";
 import Card from "./Card";
 import Table from "./Table";
+import Map from "./Map";
 
 export {
   Button,
@@ -29,5 +30,6 @@ export {
   Tabs,
   LabelImg,
   Card,
-  Table
+  Table,
+  Map
 };
