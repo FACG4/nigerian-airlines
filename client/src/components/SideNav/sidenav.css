@@ -4,7 +4,6 @@
   height: 100vh;
   padding-top: 10px;
   display: inline;
-  font-family: "Montserrat" sans-serif;
   font-size: 20px;
 }
 
@@ -21,8 +20,6 @@
   align-items: center;
   padding: 15px;
 }
-
-/* repeat dislay flex because <a> didnt take li (parent element)styles  */
 
 .sidenav-container li a {
   text-decoration: none;
