@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import moment from "moment";
 
+import { getTimeFromTimeStamp } from "../../../helpers/formatTimeAndDate";
 import {
   DetailsCard,
   Input,
@@ -113,6 +114,7 @@ class UpdateFlight extends Component {
               onSubmit={this.handleFlightUpdate}
             >
               <DetailsCard
+                adminPanel={true}
                 flightNo={flightNo}
                 boardingTime={`${moment(departureTime)
                   .add(flightDuration, "hour")
@@ -122,15 +124,15 @@ class UpdateFlight extends Component {
               />
               <Input
                 labelClassName="label-style"
-                className="departuretime-img"
+                className="input-style departuretime-img"
                 name="departureTime"
                 labelText="Departure time"
                 onChange={this.handleInputChange}
-                placeholder={departureTime}
+                placeholder={getTimeFromTimeStamp(departureTime)}
               />
               <Input
                 labelClassName="label-style"
-                className="gate-img"
+                className="input-style gate-img"
                 name="gateNo"
                 onChange={this.handleInputChange}
                 labelText="Gate no."
@@ -138,7 +140,7 @@ class UpdateFlight extends Component {
               />
               <Input
                 labelClassName="label-style"
-                className="terminalno-img"
+                className="input-style terminalno-img"
                 name="terminalNo"
                 onChange={this.handleInputChange}
                 labelText="Terminal no."
