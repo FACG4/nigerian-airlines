@@ -56,8 +56,6 @@ class FlightMap extends Component {
       Bauchi: { lat: 10.314159, lng: 9.846282 }
     };
 
-    console.log("origin", destination);
-    console.log("position", positions[destination]);
     return (
       <div className="map-container">
         <CustomerPageNavBar />
@@ -80,10 +78,8 @@ class FlightMap extends Component {
           ]}
           zoom={5}
           center={{ lat: 9.072264, lng: 7.491302 }}
-          containerElement={
-            <div style={{ height: 180 + "px", width: 300 + "px" }} />
-          }
-          mapElement={<div style={{ height: 200 + "px", width: 300 + "px" }} />}
+          containerElement={<div style={{ height: 100, width: 300 }} />}
+          mapElement={<div style={{ height: 230, width: 300 }} />}
         />
       </div>
     );
