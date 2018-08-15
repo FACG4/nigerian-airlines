@@ -8,10 +8,8 @@ models.Customers = sequelize.import('./customers');
 
 // Relations;
 
-models.Flights.hasMany(models.Customers, {
-  onDelete: 'CASCADE',
-  foreignKey: 'flight_id',
-  targetKey: 'id',
-});
+models.Flights.hasMany(models.Customers, { foreignKey: 'flight_id' });
+models.Customers.belongsTo(models.Flights, { foreignKey: 'flight_id' });
+
 
 export default models;

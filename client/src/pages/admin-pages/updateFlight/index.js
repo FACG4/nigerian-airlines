@@ -62,7 +62,8 @@ class UpdateFlight extends Component {
       body: data
     });
     this.setState({
-      alert: true
+      alert: true,
+      notify: true
     });
   };
 
@@ -97,7 +98,9 @@ class UpdateFlight extends Component {
             title="Done!"
             confirmBtnBsStyle="success"
             cancelBtnBsStyle="success"
-            onConfirm={() => (window.location = "/admin/flights")}
+            onConfirm={() => {
+              window.location = "/admin/flights";
+            }}
           >
             New Flight is Added
           </SweetAlert>
