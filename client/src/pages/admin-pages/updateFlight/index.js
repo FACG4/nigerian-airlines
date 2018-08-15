@@ -24,9 +24,6 @@ class UpdateFlight extends Component {
     error: true
   };
   componentDidMount() {
-    // const data = JSON.stringify({
-    //   flightNo
-    // });
     fetch(`/api/v1/flight/${flightNo}`, {
       credentials: "same-origin",
       headers: {

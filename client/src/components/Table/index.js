@@ -5,17 +5,6 @@ import moment from "moment";
 import "./table.css";
 
 class Table extends React.Component {
-  // flightDuration = (departureTime, arrivalTime) => {
-  //   const hours = moment
-  //     .duration(
-  //       moment(arrivalTime, "YYYY/MM/DD HH:mm").diff(
-  //         moment(departureTime, "YYYY/MM/DD HH:mm")
-  //       )
-  //     )
-  //     .asHours();
-  //   return hours;
-  // };
-
   render() {
     const { flightsArray, handleFlightNumber } = this.props;
     return (
