@@ -39,11 +39,6 @@ class Home extends Component {
     this.setState({ modalIsOpen: true });
   };
 
-  afterOpenModal = () => {
-    // references are now sync'd and can be accessed.
-    // this.subtitle.style.color = "#0f0";
-  };
-
   closeModal = () => {
     const { textInputValuepPhone } = this.state;
     if (textInputValuepPhone !== "") {
@@ -246,11 +241,9 @@ class Home extends Component {
             onTextInputChange={this.handlecheckboxChange}
           />
           <Button className="customer-btn-style">Check</Button>
-          {/* onClick={this.openModal} */}
         </form>
         <Modal
           isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Get phone no"
