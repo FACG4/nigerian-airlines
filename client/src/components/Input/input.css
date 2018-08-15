@@ -106,4 +106,8 @@
     background-image: url(/assets/imgs/flightno.png);
     background-size: 17px;
   }
+  .phone-img {
+    background-image: url(/assets/imgs/phone.png);
+    background-size: 17px;
+  }
 }
