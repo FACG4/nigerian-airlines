@@ -2,8 +2,10 @@ import models from '../../database/models/index';
 
 export default(req, res, next) => {
   const {
-    flightNo, gateNo, status, terminalNo, departureTime,
+    gateNo, status, terminalNo, departureTime,
   } = req.body;
+  const { flightId: flightNo } = req.params.flightId;
+
   models.Flights
     .update({
       gate: gateNo, status, terminal_no: terminalNo, departure_time: departureTime,

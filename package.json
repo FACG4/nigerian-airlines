@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node ./server/index.js",
     "dev": "nodemon --exec babel-node ./server/index.js",
-    "buildDb": "babel-node server/database/data/mock_data.js",
+    "buildDb": "babel-node server/database/data/mockData.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client:init": "cd client && npm i",
     "client:dev": "cd client && npm start",
