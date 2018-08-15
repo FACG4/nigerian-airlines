@@ -105,7 +105,7 @@ class Home extends Component {
               placeholder="Day DD/MM/Year"
               type="date"
               onChange={this.handledateInputChange}
-            />{" "}
+            />
             <Input
               labelClassName="customer-label-style"
               className="customer-input-style flightno-img"
@@ -113,18 +113,18 @@ class Home extends Component {
               placeholder="ex: 1234"
               type="text"
               onChange={this.handleNoInputChange}
-            />{" "}
-          </div>{" "}
+            />
+          </div>
           <CheckBox
             className="checkbox-style"
             labelText="Keep me updated"
             type="checkbox"
             onTextInputChange={this.handlecheckboxChange}
-          />{" "}
+          />
           <Button className="customer-btn-style" onClick={this.popup}>
-            Check{" "}
-          </Button>{" "}
-        </form>{" "}
+            Check
+          </Button>
+        </form>
       </div>
     );
   }

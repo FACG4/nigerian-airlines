@@ -111,6 +111,7 @@ class UpdateFlight extends Component {
               onSubmit={this.handleFlightUpdate}
             >
               <DetailsCard
+                adminPanel={true}
                 flightNo={flightNo}
                 boardingTime={`${moment(departureTime)
                   .add(flightDuration, "hour")

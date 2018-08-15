@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+
 import {
   getTimeFromTimeStamp,
   getDateFromTimeStamp
 } from "../../../helpers/formatTimeAndDate";
-
 import { CustomerPageNavBar, Tabs, Card } from "../../../components";
 import "./flightinfo.css";
 

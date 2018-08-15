@@ -46,6 +46,7 @@ class FlightMap extends Component {
       departure_time,
       aircraft
     } = this.state.flightInformation;
+
     return (
       <div className="map-container">
         <CustomerPageNavBar />
