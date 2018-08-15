@@ -9,11 +9,10 @@
     align-items: center;
     position: fixed;
     top: 50px;
-    font-family: "Montserrat" sans-serif;
+    font-family: "Voces" sans-serif;
     color: #ffffff;
   }
-  .map-style,
-  .flight-route-style {
+  .map-style, .flight-route-style {
     opacity: 0.7;
   }
   .single-tab {
