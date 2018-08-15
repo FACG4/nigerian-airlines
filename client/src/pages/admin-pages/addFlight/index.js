@@ -77,8 +77,10 @@ class AddFlight extends Component {
   handleSelectChange = e => {
     const { selectedValue } = this.state;
     const { name, value } = e.target;
-    const updatedSelectedCity = { ...selectedValue };
-    updatedSelectedCity[name] = value;
+    const updatedSelectedCity = {
+      ...selectedValue,
+      [name]: value
+    };
     this.setState({ selectedValue: updatedSelectedCity });
   };
 
