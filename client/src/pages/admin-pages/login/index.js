@@ -82,14 +82,14 @@ class Login extends Component {
         <form onSubmit={this.handleLogin}>
           <div className="inputs-group">
             <Input
-              className="username-img"
+              className="input-style username-img"
               placeholder="username"
               name="username"
               type="text"
               onChange={this.handleTextInputChange}
             />
             <Input
-              className="password-img"
+              className="input-style password-img"
               placeholder="password"
               name="password"
               type="password"

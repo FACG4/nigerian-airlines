@@ -8,27 +8,19 @@
   margin: 0 auto 40px auto;
   padding-top: 20px;
 }
-
 .details-label {
   float: left;
   margin-right: 10px;
 }
-
 .float-style {
   float: right;
 }
-
 .details-title-style {
   text-align: center;
   font-size: 15px;
   width: 100%;
   margin: 10px 0;
 }
-
-.details-label {
-  margin-right: 10px;
-}
-
 .float-style {
   float: right;
 }
@@ -42,7 +34,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .container-card-details {
+  .customer-container-card-details {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -51,6 +43,7 @@
     font-family: "Voces";
     font-size: 14px;
     width: 300px;
+    padding: 10px 5px;
   }
   .details-title-style {
     text-align: center;

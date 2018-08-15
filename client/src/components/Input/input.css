@@ -2,6 +2,7 @@
   width: 500px;
   height: 50px;
   margin-bottom: 40px;
+  font-family: "Montserrat" sans-serif;
 }
 
 .input-style {
@@ -73,7 +74,7 @@
     width: 250px;
     height: 80px;
     font-family: "Voces";
-    margin: 0 auto 30px;
+    margin: 0 auto 30px auto;
   }
   .customer-input-style {
     background-color: #c4c4c470;
