@@ -54,7 +54,7 @@ models.sequelize.sync({ force: true }).then(async () => {
       last_name: 'Abumusameh',
       email: 'abdalsamad.y.m@gmail.com',
       phone: '0599194310',
-      notify_me: true,
+      notify_me: false,
       flight_id: 1,
     },
     {
@@ -62,15 +62,23 @@ models.sequelize.sync({ force: true }).then(async () => {
       last_name: 'Ashi',
       email: 'balsam@gmail.com',
       phone: '0599000001',
-      notify_me: true,
+      notify_me: false,
       flight_id: 1,
     },
     {
       first_name: 'Inass',
       last_name: 'T.',
       email: 'inass@gmail.com',
-      phone: '05990000002',
-      notify_me: false,
+      phone: '+970567716309',
+      notify_me: true,
+      flight_id: 1,
+    },
+    {
+      first_name: 'Inasssssss',
+      last_name: 'T.sddddddddddd',
+      email: 'inassssssssss@gmail.com',
+      phone: '+97056771638809',
+      notify_me: true,
       flight_id: 1,
     },
     {
@@ -78,7 +86,7 @@ models.sequelize.sync({ force: true }).then(async () => {
       last_name: 'Shurafa',
       email: 'Ramy@gmail.com',
       phone: '05990000003',
-      notify_me: true,
+      notify_me: false,
       flight_id: 2,
     },
     {
@@ -86,7 +94,7 @@ models.sequelize.sync({ force: true }).then(async () => {
       last_name: 'Johnn',
       email: 'rees@gmail.com',
       phone: '05990000004',
-      notify_me: true,
+      notify_me: false,
       flight_id: 2,
     },
     {
@@ -94,7 +102,7 @@ models.sequelize.sync({ force: true }).then(async () => {
       last_name: 'hani',
       email: 'root@gmail.com',
       phone: '05990000006',
-      notify_me: true,
+      notify_me: false,
       flight_id: 2,
     },
     {
@@ -102,7 +110,7 @@ models.sequelize.sync({ force: true }).then(async () => {
       last_name: 'H.',
       email: 'finch@gmail.com',
       phone: '05990000009',
-      notify_me: true,
+      notify_me: false,
       flight_id: 2,
     },
   ]);

@@ -31,7 +31,8 @@
     "pg-hstore": "^2.3.2",
     "react-bootstrap-sweetalert": "^4.4.1",
     "sequelize": "^4.38.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "twilio": "^3.19.1"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
