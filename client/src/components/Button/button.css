@@ -11,6 +11,23 @@
   border-radius: 5px;
   width: 230px;
   height: 50px;
-  font-family: "Volkhov";
   margin-left: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .cus-btn-style {
+    background-color: #64b3a590;
+    border: none;
+    color: #313232;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 19px;
+    cursor: pointer;
+    border-radius: 7px;
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+  }
 }
