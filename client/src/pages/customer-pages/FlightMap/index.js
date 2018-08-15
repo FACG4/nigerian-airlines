@@ -47,6 +47,17 @@ class FlightMap extends Component {
       aircraft
     } = this.state.flightInformation;
 
+    const positions = {
+      Abuja: { lat: 9.072264, lng: 7.491302 },
+      Enugu: { lat: 6.459964, lng: 7.548949 },
+      Kaduna: { lat: 10.609319, lng: 7.429504 },
+      Surulere: { lat: 6.5, lng: 3.35 },
+      Sokoto: { lat: 13.005873, lng: 5.247552 },
+      Bauchi: { lat: 10.314159, lng: 9.846282 }
+    };
+
+    console.log("origin", destination);
+    console.log("position", positions[destination]);
     return (
       <div className="map-container">
         <CustomerPageNavBar />
@@ -62,6 +73,18 @@ class FlightMap extends Component {
           &nbsp;-&nbsp;
           <label>{destination}</label>
         </div>
+        <Map
+          markers={[
+            { position: positions[origin] },
+            { position: positions[destination] }
+          ]}
+          zoom={5}
+          center={{ lat: 9.072264, lng: 7.491302 }}
+          containerElement={
+            <div style={{ height: 180 + "px", width: 300 + "px" }} />
+          }
+          mapElement={<div style={{ height: 200 + "px", width: 300 + "px" }} />}
+        />
       </div>
     );
   }
