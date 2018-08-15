@@ -6,10 +6,10 @@ const CustomerPageNavBar = () => (
   <div className="navbar-style">
     <img
       src="./assets/imgs/flight.png"
-      className="cus-plane-image"
+      className="customer-plane-image"
       alt="plane"
     />
-    <div className="cus-app-name-style">App Name</div>
+    <div className="customer-app-name-style">App Name</div>
   </div>
 );
 

@@ -1,8 +1,13 @@
 import models from '../../database/models/index';
 
-export default(req, res, next) => {
+export default (req, res, next) => {
   const {
-    originValue, destinationValue, dateValue, airCraftTypeValue, flightDuration, flightNumberValue,
+    originValue,
+    destinationValue,
+    dateValue,
+    airCraftTypeValue,
+    flightDuration,
+    flightNumberValue,
   } = req.body;
   models.Flights.create({
     flight_no: flightNumberValue,
@@ -13,7 +18,12 @@ export default(req, res, next) => {
     aircraft: airCraftTypeValue,
   }).then((result) => {
     if (result) {
-      res.status(201).send({ succesfullyAdded: true, flightNo: result.flight_no });
+      res.status(201).send({
+        succesfullyAdded: true,
+        flightNo: result.flight_no,
+      });
     }
-  }).catch((err) => { next(err); });
+  }).catch((err) => {
+    next(err);
+  });
 };

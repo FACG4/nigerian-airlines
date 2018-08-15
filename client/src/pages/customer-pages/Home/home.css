@@ -1,0 +1,21 @@
+@media screen and (max-width: 500px) {
+  .customer-container {
+    background-color: #ECFCF9;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Voces';
+  }
+  .customer-form-style {
+    text-align: center;
+  }
+  .customer-inputs-group {
+    width: 250px;
+  }
+  .customer-h1-style {
+    margin-bottom: 40px;
+    font-weight: normal;
+  }
+}

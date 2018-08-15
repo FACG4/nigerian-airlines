@@ -8,15 +8,14 @@
     align-items: center;
     position: fixed;
     top: 0;
-    font-family: "Montserrat" sans-serif;
   }
-  .cus-plane-image {
+  .customer-plane-image {
     width: 40px;
     height: 40px;
     padding-top: 5px;
     margin-left: 5px;
   }
-  .cus-app-name-style {
+  .customer-app-name-style {
     font-size: 20px;
     font-weight: bold;
     color: #ffffff;

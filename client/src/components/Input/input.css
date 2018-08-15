@@ -76,7 +76,7 @@
     font-family: "Voces";
     margin: 0 auto 30px auto;
   }
-  .cus-input-style {
+  .customer-input-style {
     background-color: #c4c4c470;
     border: none;
     padding: 5px;
@@ -89,10 +89,10 @@
     padding-left: 40px;
     display: block;
   }
-  .cus-input-style::placeholder {
+  .customer-input-style::placeholder {
     color: #1f212170;
   }
-  .cus-label-style {
+  .customer-label-style {
     font-size: 16px;
     margin-bottom: 5px;
     height: 30px;
