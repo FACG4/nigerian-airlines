@@ -29,7 +29,7 @@ class DetailsCard extends Component {
           <div className="center-div">
             <div className="container-card-details">
               <div className="labels-container">
-                <label className="details-label">Flight number</label>
+                <label className="details-label">Flight no.</label>
                 <label className="float-style">{flight_no}</label>
               </div>
               <div className="labels-container">
