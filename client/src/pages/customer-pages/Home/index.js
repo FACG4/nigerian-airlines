@@ -40,7 +40,7 @@ class Home extends Component {
   };
 
   closeModal = () => {
-    const { textInputValuepPhone } = this.state;
+    const { textInputValuepPhone, textInputValueFlightNo } = this.state;
     if (textInputValuepPhone !== "") {
       const data = JSON.stringify({
         textInputValuepPhone
@@ -56,6 +56,9 @@ class Home extends Component {
         .then(response => response.json(data))
         .then(data => {
           if (data.isAvailable) {
+            if (textInputValueFlightNo !== "") {
+              this.goToFlight();
+            }
             this.setState({ modalIsOpen: false });
           } else {
             this.invalidFlightNoAlert("Invalied Phone no.!");
@@ -110,6 +113,39 @@ class Home extends Component {
     });
   }
 
+  goToFlight = () => {
+    const { textInputValueFlightNo } = this.state;
+    const data = JSON.stringify({
+      textInputValueFlightNo
+    });
+    fetch("/api/v1/check_flight", {
+      credentials: "same-origin",
+      headers: {
+        "content-type": "application/json"
+      },
+      method: "POST",
+      body: data
+    })
+      .then(response => response.json(data))
+      .then(data => {
+        sessionStorage.setItem("flight_no", data.flight_no);
+        if (data.isAvailable) {
+          this.setState({
+            isAvailable: true
+          });
+          data.isAvailable && (window.location = "/flightinfo");
+        } else {
+          this.setState({
+            isAvailable: false
+          });
+          this.invalidFlightNoAlert("Invalied Flight no.!");
+        }
+      })
+      .catch(err => {
+        console.log("There has been an error ", err);
+      });
+  };
+
   handleCheck = e => {
     e.preventDefault();
     const {
@@ -120,35 +156,7 @@ class Home extends Component {
 
     if (checkboxValue === false) {
       if (textInputValueFlightNo !== "") {
-        const data = JSON.stringify({
-          textInputValueFlightNo
-        });
-        fetch("/api/v1/check_flight", {
-          credentials: "same-origin",
-          headers: {
-            "content-type": "application/json"
-          },
-          method: "POST",
-          body: data
-        })
-          .then(response => response.json(data))
-          .then(data => {
-            sessionStorage.setItem("flight_no", data.flight_no);
-            if (data.isAvailable) {
-              this.setState({
-                isAvailable: true
-              });
-              data.isAvailable && (window.location = "/flightinfo");
-            } else {
-              this.setState({
-                isAvailable: false
-              });
-              this.invalidFlightNoAlert("Invalied Flight no.!");
-            }
-          })
-          .catch(err => {
-            console.log("There has been an error ", err);
-          });
+        this.goToFlight();
       } else {
         this.invalidFlightNoAlert("Invalied Flight no.!");
       }
@@ -171,35 +179,6 @@ class Home extends Component {
           .then(data => {
             if (data.isAvailable) {
               if (textInputValueFlightNo !== "") {
-                const data = JSON.stringify({
-                  textInputValueFlightNo
-                });
-                fetch("/api/v1/check_flight", {
-                  credentials: "same-origin",
-                  headers: {
-                    "content-type": "application/json"
-                  },
-                  method: "POST",
-                  body: data
-                })
-                  .then(response => response.json(data))
-                  .then(data => {
-                    sessionStorage.setItem("flight_no", data.flight_no);
-                    if (data.isAvailable) {
-                      this.setState({
-                        isAvailable: true
-                      });
-                      data.isAvailable && (window.location = "/flightinfo");
-                    } else {
-                      this.setState({
-                        isAvailable: false
-                      });
-                      this.invalidFlightNoAlert("Invalied Flight no.!");
-                    }
-                  })
-                  .catch(err => {
-                    console.log("There has been an error ", err);
-                  });
               } else {
                 this.invalidFlightNoAlert("Invalied Flight no.!");
               }
@@ -223,7 +202,6 @@ class Home extends Component {
               labelText="Your flight date"
               placeholder="Day DD/MM/Year"
               type="date"
-              onChange={this.handledateInputChange}
             />
             <Input
               labelClassName="customer-label-style"
