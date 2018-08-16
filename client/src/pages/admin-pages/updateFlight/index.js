@@ -115,8 +115,8 @@ class UpdateFlight extends Component {
             >
               <DetailsCard
                 adminPanel={true}
-                flightNo={flightNo}
-                boardingTime={`${moment(departureTime)
+                flight_no={flightNo}
+                boarding_time={`${moment(departureTime)
                   .add(flightDuration, "hour")
                   .format("YYYY/MM/DD HH:mm")}`}
                 destination={destination}
