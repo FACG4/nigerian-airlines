@@ -18,4 +18,14 @@
     margin-bottom: 40px;
     font-weight: normal;
   }
+  .customer-modal-subtitle {
+    font-size: 20px;
+    font-family: 'Voces';
+    margin-bottom: 30px;
+  }
+  .update-image {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
 }

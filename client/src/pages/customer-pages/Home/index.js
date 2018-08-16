@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
+import Modal from "react-modal";
 
 import {
   Input,
@@ -9,17 +10,76 @@ import {
 } from "../../../components";
 import "./home.css";
 
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    width: "300px",
+    height: "400px",
+    background: "#5A9389"
+  }
+};
+
+Modal.setAppElement("#root");
 class Home extends Component {
   state = {
     textInputValueFlightNo: "",
-    checkboxValue: true,
+    textInputValuepPhone: "",
+    checkboxValue: false,
     isAvailable: false,
-    alert: null
+    alert: null,
+    modalIsOpen: false
+  };
+
+  openModal = () => {
+    this.setState({ modalIsOpen: true });
+  };
+
+  closeModal = () => {
+    const { textInputValuepPhone, textInputValueFlightNo } = this.state;
+    if (textInputValuepPhone !== "") {
+      const data = JSON.stringify({
+        textInputValuepPhone
+      });
+      fetch("/api/v1/check_phone", {
+        credentials: "same-origin",
+        headers: {
+          "content-type": "application/json"
+        },
+        method: "POST",
+        body: data
+      })
+        .then(response => response.json(data))
+        .then(data => {
+          if (data.isAvailable) {
+            if (textInputValueFlightNo !== "") {
+              this.goToFlight();
+            }
+            this.setState({ modalIsOpen: false });
+          } else {
+            this.invalidFlightNoAlert("Invalied Phone no.!");
+          }
+        })
+        .catch(err => {
+          console.log("There has been an error ", err);
+        });
+    } else {
+      this.invalidFlightNoAlert("Invalied Phone no.!");
+    }
   };
 
   handleNoInputChange = e => {
     this.setState({
       textInputValueFlightNo: e.target.value
+    });
+  };
+  handlePhoneInputChange = e => {
+    this.setState({
+      textInputValuepPhone: e.target.value
     });
   };
 
@@ -29,7 +89,7 @@ class Home extends Component {
     });
   };
 
-  invalidFlightNoAlert = () => {
+  invalidFlightNoAlert = msg => {
     const getAlert = () => (
       <SweetAlert
         warning
@@ -38,7 +98,7 @@ class Home extends Component {
         cancelBtnBsStyle="danger"
         onConfirm={() => this.hideAlert()}
       >
-        Invalied Flight no.!
+        {msg}
       </SweetAlert>
     );
 
@@ -53,10 +113,8 @@ class Home extends Component {
     });
   }
 
-  handleCheck = e => {
-    e.preventDefault();
+  goToFlight = () => {
     const { textInputValueFlightNo } = this.state;
-    console.log(textInputValueFlightNo);
     const data = JSON.stringify({
       textInputValueFlightNo
     });
@@ -71,8 +129,6 @@ class Home extends Component {
       .then(response => response.json(data))
       .then(data => {
         sessionStorage.setItem("flight_no", data.flight_no);
-        console.log(data.flight_no);
-
         if (data.isAvailable) {
           this.setState({
             isAvailable: true
@@ -82,12 +138,54 @@ class Home extends Component {
           this.setState({
             isAvailable: false
           });
-          this.invalidFlightNoAlert();
+          this.invalidFlightNoAlert("Invalied Flight no.!");
         }
       })
       .catch(err => {
         console.log("There has been an error ", err);
       });
+  };
+
+  handleCheck = e => {
+    e.preventDefault();
+    const {
+      textInputValueFlightNo,
+      textInputValuepPhone,
+      checkboxValue
+    } = this.state;
+
+    if (checkboxValue === false) {
+      if (textInputValueFlightNo !== "") {
+        this.goToFlight();
+      } else {
+        this.invalidFlightNoAlert("Invalied Flight no.!");
+      }
+    } else {
+      if (textInputValuepPhone === "") {
+        this.openModal();
+      } else {
+        const data1 = JSON.stringify({
+          textInputValuepPhone
+        });
+        fetch("/api/v1/update_customer", {
+          credentials: "same-origin",
+          headers: {
+            "content-type": "application/json"
+          },
+          method: "POST",
+          body: data1
+        })
+          .then(response => response.json(data1))
+          .then(data => {
+            if (data.isAvailable) {
+              if (textInputValueFlightNo !== "") {
+              } else {
+                this.invalidFlightNoAlert("Invalied Flight no.!");
+              }
+            }
+          });
+      }
+    }
   };
 
   render() {
@@ -104,7 +202,6 @@ class Home extends Component {
               labelText="Your flight date"
               placeholder="Day DD/MM/Year"
               type="date"
-              onChange={this.handledateInputChange}
             />
             <Input
               labelClassName="customer-label-style"
@@ -121,10 +218,35 @@ class Home extends Component {
             type="checkbox"
             onTextInputChange={this.handlecheckboxChange}
           />
-          <Button className="customer-btn-style" onClick={this.popup}>
+          <Button className="customer-btn-style">Check</Button>
+        </form>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Get phone no"
+        >
+          <img
+            src="/assets/imgs/update.png"
+            className="update-image"
+            alt="update"
+          />
+          <div className="customer-modal-subtitle">
+            To be in update just <br /> enter your phone
+          </div>
+          <Input
+            className="customer-input-style phone-img"
+            placeholder="phone"
+            type="text"
+            onChange={this.handlePhoneInputChange}
+          />
+          <Button
+            className="customer-btn-check-style"
+            onClick={this.closeModal}
+          >
             Check
           </Button>
-        </form>
+        </Modal>
       </div>
     );
   }
